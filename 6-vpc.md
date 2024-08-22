@@ -26,4 +26,4 @@ A **Virtual Private Cloud** (VPC) in Amazon Web Services (AWS) is a virtual netw
 
 **OBS 3**: Even though some instances are in different subnets but they can communicate with each other because they are in the same VPC (EX: 10.0.0.0/16). However, you can configure to one subnet doesn't see other one.
 
-**OBS 4**: When an instance is private, it can't access the internet, therefore, the user can't access the instance through aws console. There are two way to solve this, access the private instance through a public instance in the same network or through **Bastian Host**.
+**OBS 4**: When an instance is private, it can't access the internet, therefore, the user can't access the instance through aws console. The way to solve this is access the private instance through a public one in the same network. This process is called **Bastian Host**. In a nutshell, it acts as a gateway between your private network (where your private instances reside) and the outside world.
