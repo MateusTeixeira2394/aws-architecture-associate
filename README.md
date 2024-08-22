@@ -9,3 +9,5 @@ So, this study is split in some files, such is:
 - 2-the-aws.md
 - 3-iam.md
 - 4-s3.md
+- 5-ec2.md
+- 6-vpc.md
