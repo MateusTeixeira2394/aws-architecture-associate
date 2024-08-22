@@ -48,3 +48,21 @@ If you have many VPCs or need to connect VPCs to on-premises networks, Transit G
 
 For example, if you have 4 VPCs according to the image above, they need 6 peering connections. If the network increase, the number of connections will increase exponentially, turning this solution impracticable.
 
+# 3. Stateful vs Stateless 🧱
+
+In AWS, Security Groups (SG) and Network Access Control Lists (NACLs) are used to control inbound and outbound traffic to resources in a Virtual Private Cloud (VPC). They differ in their approach to handling traffic based on whether they are stateful or stateless.
+
+| Feature                | Security Groups (Stateful)                    | Network Access Control Lists (NACLs) (Stateless)  |
+|------------------------|------------------------------------------------|---------------------------------------------------|
+| **State Tracking**     | Stateful (tracks connection states)           | Stateless (does not track connection states)     |
+| **Rules**              | Rules apply to both inbound and outbound traffic; responses are automatically allowed if inbound traffic is permitted | Separate rules are needed for both inbound and outbound traffic |
+| **Default Behavior**   | Implicitly allows return traffic for permitted inbound connections | Must explicitly allow return traffic for permitted inbound connections |
+| **Application Level**  | Associated with individual resources (e.g., EC2 instances) | Associated with subnets |
+| **Granularity**        | More granular control at the instance level    | Broad control at the subnet level                |
+| **Complexity**         | Easier to manage for dynamic applications and complex setups | Requires careful management of rules for bidirectional traffic |
+| **Rule Application**   | Rules are applied automatically to the instances within the security group | Rules are applied to all traffic entering or leaving the subnet |
+| **Default Security**   | Default security group allows all outbound traffic and no inbound traffic unless explicitly allowed | Default NACL allows all inbound and outbound traffic |
+| **Logging & Auditing** | Logs available through CloudWatch and other tools | Logs available through CloudWatch and other tools |
+| **Use Cases**          | Ideal for managing traffic to specific instances, dynamic applications | Ideal for managing broad traffic rules for entire subnets, simpler scenarios |
+
+![Stateful vs Stateless image](./imgs/vpc-stateful-stateless.jpg)
