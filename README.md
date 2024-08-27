@@ -11,3 +11,4 @@ So, this study is split in some files, such is:
 - 4-s3.md
 - 5-ec2.md
 - 6-vpc.md
+- 7-elb.md

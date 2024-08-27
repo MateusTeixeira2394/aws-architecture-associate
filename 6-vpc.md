@@ -48,6 +48,8 @@ If you have many VPCs or need to connect VPCs to on-premises networks, Transit G
 
 For example, if you have 4 VPCs according to the image above, they need 6 peering connections. If the network increase, the number of connections will increase exponentially, turning this solution impracticable.
 
+**OBS**: Even though peering connection and transit gateway have different purpose, they allow the communication between two VPCs cross-region. It means, they stablish connection of VPCs in different regions.
+
 # 3. Stateful vs Stateless 🧱
 
 In AWS, Security Groups (SG) and Network Access Control Lists (NACLs) are used to control inbound and outbound traffic to resources in a Virtual Private Cloud (VPC). They differ in their approach to handling traffic based on whether they are stateful or stateless.
@@ -66,3 +68,129 @@ In AWS, Security Groups (SG) and Network Access Control Lists (NACLs) are used t
 | **Use Cases**          | Ideal for managing traffic to specific instances, dynamic applications | Ideal for managing broad traffic rules for entire subnets, simpler scenarios |
 
 ![Stateful vs Stateless image](./imgs/vpc-stateful-stateless.jpg)
+
+## 3.1. Security Group
+
+A **Security Group** in AWS is a virtual firewall that controls the inbound and outbound traffic to and from Amazon EC2 instances and other associated resources. It acts as a critical security layer in protecting your cloud infrastructure by allowing or blocking specific types of traffic based on defined rules.
+
+## 3.2. NACL
+
+**NACL (Network Access Control List)** in AWS is a security layer that acts as a virtual firewall for controlling inbound and outbound traffic at the subnet level within a Virtual Private Cloud (VPC). NACLs provide an additional layer of security by allowing you to set rules that govern the traffic entering or leaving the subnets in your VPC.
+
+**OBS:** The rules are configured through a table and the order of the rows affecting the behavior of others rules with less priority. For example, if the priority of a rule the ables an inbound of a subnet is greater than a rule the disable its inbound connection, the second rule won't work.
+
+| Order | Port | Origin      | Allow/Deny |                                            |
+|-------|------|-------------|------------|--------------------------------------------|
+| 90    | 80   |10.0.1.148/32| Allow      | <p style="color:limegreen">Works</p>       |
+| 91    | 80   |10.0.1.148/32| Deny       | <p style="color:orangered">doesn't work</p>|
+
+# 4. VPC Peering 🪢
+
+As mentioned earlier in the subtopic [2.3. Peering Connection](#23-peering-connection), A **peering connection** refers to a network connection between two Virtual Private Clouds (VPCs) that allows them to communicate with each other as if they were part of the same network.
+
+To make it works, you must to create a peering connection, informing the origin VPC and the destiny one. Besides that, you must inform the new VPC route in both VPC routing table and allow their communication in both VPC securities group.
+
+![VPC peering connection image](./imgs/vpc-peering-detailed.jpg)
+
+## 4.1. Overlapping 
+
+You must be aware with **Overlapping** that is when two or more VPC share the same AP address range.  This overlap can create routing conflicts and prevent the successful establishment of a peering connection.
+
+![VPC Overlapping image](./imgs/vpc-overlapping.jpg)
+
+## 4.2. Transit
+
+**Transit** refers to the ability (or rather the lack of ability) to route traffic between two VPCs via a third VPC with which both are peered.
+
+VPC peering connection **does not support transitive routing**. A VPC cannot route traffic to another VPC via a third VPC to which it is peered.
+
+![VPC transit image](./imgs/vpc-transit.jpg)
+
+# 5. VPC Endpoints 🛣️
+
+**VPC endpoints** allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink, without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the service does not leave the AWS network.
+
+## 5.1. Gateway Endpoints (public)
+
+Certain AWS services are **public** by default, meaning they communicate over the internet unless you explicitly configure them to use private connectivity (such as through VPC endpoints, VPC peering, or AWS Direct Connect), such as:
+
+- Amazon S3 (Simple Storage Service);
+- Amazon DynamoDB;
+- Amazon SNS (Simple Notification Service);
+- Amazon API Gateway;
+- AWS Lambda;
+- AWS Elastic Load Balancing (Classic/ALB/NLB);
+- Amazon RDS (Relational Database Service);
+- Amazon SES (Simple Email Service);
+- And others;
+
+So, these services create a route in the VPC route table that directs traffic them to the gateway, keeping it within the AWS network.
+
+## 5.2. Interface Endpoints (private)
+
+Otherwise, some AWS services are already **private** and they use the **Interface Endpoints** use **Elastic Network Interfaces (ENIs)** within the VPC to connect to supported AWS services. These endpoints have a private IP address from the VPC’s IP address range. 
+
+They are powered by AWS PrivateLink, which provides private connectivity between VPCs, AWS services, and on-premises networks.
+
+# 6. AWS VPN 🔐
+
+In AWS, **VPN (Virtual Private Network)** services are used to securely connect on-premises networks or remote clients to your AWS environment. AWS provides two main types of VPN connections:
+
+## 6.1. Client-to-Site VPN (AWS Client VPN)
+
+### 6.1.1. Overview
+- **Client-to-Site VPN** allows individual remote users (clients) to securely connect to your AWS VPC (Virtual Private Cloud). It’s a scalable VPN solution that uses OpenVPN-based clients to establish a secure connection from the user's device to the AWS network.
+
+### 6.1.2. Key Characteristics
+- **Remote Access**: Enables individual users (employees, contractors, etc.) to access resources within an AWS VPC from any location over the internet.
+- **OpenVPN-Based**: AWS Client VPN uses the OpenVPN protocol, and users can connect using any OpenVPN-compatible client.
+- **Scalability**: Supports connections from thousands of users.
+- **Authentication**: Supports multiple authentication methods, including Active Directory, mutual certificate-based authentication, and SAML-based authentication.
+- **Managed Service**: AWS manages the underlying infrastructure, including scaling, patching, and availability.
+
+### 6.1.3. Use Cases
+- **Remote Workforce**: Ideal for companies with employees working remotely who need secure access to AWS resources.
+- **Contractor Access**: Providing secure, temporary access to AWS resources for contractors or third-party vendors.
+- **Mobile Access**: Allowing access from mobile devices using the OpenVPN protocol.
+
+### 6.1.4. Setup Process
+1. Create a Client VPN endpoint in the AWS Console.
+2. Configure the authentication method (e.g., Active Directory).
+3. Define the Client VPN route tables to determine which VPC resources clients can access.
+4. Distribute the VPN client configuration to users, who will connect using OpenVPN-compatible software.
+
+## 6.2. Site-to-Site VPN
+
+### 6.2.1. Overview
+- **Site-to-Site VPN** allows you to connect an entire on-premises network to an AWS VPC using an IPsec VPN tunnel. This setup enables secure communication between your on-premises network (or another cloud environment) and your AWS resources as if they were on the same network.
+
+### 6.2.2. Key Characteristics
+- **Network-to-Network Connectivity**: Connects an entire on-premises network to your AWS VPC, providing secure access to AWS resources from your corporate network.
+- **IPsec Tunnel**: Uses the IPsec protocol to encrypt traffic between the two sites (your on-premises network and AWS).
+- **VPN Gateway**: AWS uses a Virtual Private Gateway (VGW) on the VPC side and a Customer Gateway (CGW) on the on-premises side.
+- **Redundancy**: Supports multiple tunnels for redundancy and high availability.
+- **BGP Support**: Supports dynamic routing using Border Gateway Protocol (BGP) or static routing for route management.
+
+### 6.2.3. Use Cases
+- **Hybrid Cloud**: Integrating on-premises data centers with AWS to create a hybrid cloud environment.
+- **Cross-Region Communication**: Connecting different AWS regions or connecting AWS with another cloud provider.
+- **Disaster Recovery**: Ensuring your on-premises resources can securely access AWS for backup and recovery purposes.
+
+### 6.2.4. Setup Process
+1. Configure a Virtual Private Gateway (VGW) in your VPC.
+2. Create a Customer Gateway (CGW) to represent your on-premises device (e.g., a router or firewall).
+3. Establish a VPN connection between the VGW and the CGW.
+4. Configure your on-premises device to establish an IPsec tunnel with the VGW using the configuration provided by AWS.
+5. Set up routing on both ends to ensure traffic is properly directed through the VPN.
+
+## 6.3. Comparison
+
+| Aspect               | Client-to-Site VPN                         | Site-to-Site VPN                              |
+|----------------------|--------------------------------------------|-----------------------------------------------|
+| **Purpose**          | For individual users or devices needing secure remote access to AWS | For connecting entire on-premises networks to AWS |
+| **Connection Type**  | User-to-network                            | Network-to-network                            |
+| **Scalability**      | Supports a large number of individual users | Typically connects a single on-premises network to AWS (though you can have multiple Site-to-Site VPNs) |
+| **Protocol**         | OpenVPN                                    | IPsec                                         |
+| **Use Case**         | Remote workforce, individual access        | Hybrid cloud, on-premises integration, secure corporate network extension |
+
+Both VPN types serve different needs and can be used together in a comprehensive network strategy to secure and scale access to AWS resources.
