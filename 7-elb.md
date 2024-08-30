@@ -22,7 +22,7 @@ Scaling Up and Scaling Out are two different strategies for handling increased l
 
 - **Use Case**: Ideal for applications that can run on multiple instances in parallel. It provides better fault tolerance and can scale indefinitely (or up to the limits of the AWS service).
 
-# 3. Auto Scaling
+# 3. Auto Scaling 🤖📈
 
 **Auto Scaling** in AWS is a service that automatically adjusts the number of compute resources, such as Amazon EC2 instances, based on the current demand for your application. It helps maintain application availability and allows you to scale your resources up or down automatically according to defined conditions.
 
@@ -67,8 +67,55 @@ AWS Auto Scaling simplifies the management of compute resources, ensuring that y
 
 ![Auto Scaling image](./imgs/elb-auto-scaling.jpg)
 
-# 4. Load Balancers
+# 4. Load Balancers ⚖️
 
-to do
+A load balancer is a service that automatically distributes incoming application traffic across multiple targets, such as **EC2 instances**, **containers**, or **IP addresses**. AWS provides different types of load balancers through its Elastic Load Balancing (ELB) service, which helps to increase the availability and fault tolerance of your applications by distributing the traffic evenly and routing it to healthy instances only.
+
+![Load Balancer diagram image](./imgs/elb-load-balancer.jpg)
+
+## 4.1. Types of Load Balancers 
+
+1. **Application Load Balancer (ALB)**
+   - Operates at the application layer (Layer 7) of the OSI model.
+   - Routes traffic based on the content of the request (e.g., HTTP/HTTPS headers, URL paths).
+   - Supports advanced routing, including path-based routing, host-based routing, and routing based on query string or header values.
+   - Ideal for microservices and containerized applications.
+   - The load balancer can communicate directly to:
+      - Instances;
+      - IP address;
+      - Targets;
+      - Lambda services;
+      - Containers;
+   - **Advantage**: More detailed and smart.
+
+2. **Network Load Balancer (NLB)**:
+   - Even though its name is Network Load Balancer, it operates at the transport layer (Layer 4) of the OSI model.
+   - Routes traffic based on IP protocol data, providing ultra-low latency.
+   - Capable of handling millions of requests per second while maintaining very low latency.
+   - Ideal for applications that require extreme performance, such as gaming or real-time streaming.
+   - **Advantage**: High performance and low latency.
+
+# 5. Target Groups 🎯
+
+   In AWS, a **Target Group** is a concept used with load balancers, specifically with Application Load Balancers (ALBs), Network Load Balancers (NLBs), and Gateway Load Balancers (GLBs). A target group determines how the load balancer routes requests to one or more registered targets, such as EC2 instances, IP addresses, or AWS Lambda functions.
+
+## 5.1. Key concepts
+
+1. **Targets**:
+   - EC2 instances
+   - IP addresses (within or outside AWS)
+   - AWS Lambda functions
+   - ECS tasks
+
+2. **Health Check**:
+   - Health checks are used to determine whether a target is healthy and able to receive traffic. You can configure health check settings such as the path, interval, timeout, and the success/failure thresholds.
+   - The load balancer will route traffic only to healthy targets.
+
+3. **Target Group Type**:
+   - **Instance Target Groups**: Used when targets are EC2 instances.
+   - **IP Target Groups**: Used when targets are IP addresses.
+   - **Lambda Target Groups**: Used when the target is a Lambda function.
+
+
 
 
