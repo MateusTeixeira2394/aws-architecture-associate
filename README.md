@@ -12,4 +12,4 @@ So, this study is split in some files, such is:
 - 5-ec2.md
 - 6-vpc.md
 - 7-elb.md
-- 8-rds.md
+- 8-db.md
