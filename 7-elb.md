@@ -116,6 +116,6 @@ A load balancer is a service that automatically distributes incoming application
    - **IP Target Groups**: Used when targets are IP addresses.
    - **Lambda Target Groups**: Used when the target is a Lambda function.
 
-
+![Target Group diagram](./imgs/elb-target-group.jpg)
 
 
