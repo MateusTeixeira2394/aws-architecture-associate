@@ -2,7 +2,7 @@
 
 Amazon **Relational Database Service (RDS)** is a managed service provided by AWS that makes it easy to set up, operate, and scale a relational database in the cloud. It automates time-consuming tasks such as hardware provisioning, database setup, patching, and backups, allowing you to focus on your applications.
 
-# 2. Supported Databases 💿
+# 2. Supported SQL Databases 💿
 
 RDS supports several popular database engines, including:
 - Amazon Aurora (a MySQL and PostgreSQL-compatible relational database)
@@ -66,3 +66,31 @@ You can use both features together to achieve high availability, data durability
 
 - Automated: 1-35 days (1sec) -> s3 (free)
 - Manual: DB snapshot
+
+# 5. DynamoDB vs Elasticache
+
+## 5.1. Dynamo
+Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web Services (AWS). It is designed for applications that require low-latency, high-performance access to large amounts of data. DynamoDB is particularly well-suited for use cases such as real-time analytics, gaming, IoT, mobile apps, and more.
+
+## 5.2. Elasticache
+
+Amazon ElastiCache is a fully managed in-memory data store and caching service provided by Amazon Web Services (AWS). It is designed to improve the performance of your web applications by enabling faster data retrieval from in-memory databases, which can significantly reduce the load on your primary database.
+
+## 5.3. Difference
+
+| **Feature**               | **Amazon DynamoDB**                                    | **Amazon ElastiCache**                                      |
+|---------------------------|-------------------------------------------------------|-------------------------------------------------------------|
+| **Purpose**               | Fully managed NoSQL database                          | Fully managed in-memory data store and caching service      |
+| **Data Model**            | Key-value and document store                          | Key-value store (supports Redis and Memcached)              |
+| **Data Storage**          | Persistent, stored on disk                            | In-memory, typically non-persistent (Redis supports persistence) |
+| **Performance**           | Low latency, high throughput                          | Extremely low latency, sub-millisecond response times       |
+| **Scalability**           | Automatically scales horizontally                     | Scales by adding nodes and increasing instance sizes        |
+| **Replication**           | Multi-region, automatic scaling, and global tables    | Supports replication (Redis) and automatic failover         |
+| **Data Durability**       | Durable with automatic backups and point-in-time recovery | Volatile by default (Redis offers snapshot and AOF persistence options) |
+| **Use Case**              | Applications needing reliable, scalable storage       | Applications needing fast, in-memory data access            |
+| **Common Use Cases**      | Real-time bidding, e-commerce, IoT, mobile apps       | Caching, session storage, real-time analytics, gaming leaderboards |
+| **Supported Engines**     | Proprietary (AWS-built NoSQL service)                 | Redis, Memcached                                            |
+| **Capacity Modes**        | On-demand and provisioned capacity modes              | Scales based on node addition and cluster configuration     |
+| **Security**              | Encryption at rest and in transit, fine-grained access control | Encryption, VPC integration, and IAM support                |
+
+
