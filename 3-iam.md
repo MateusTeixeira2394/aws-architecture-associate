@@ -8,7 +8,7 @@ You can access it through:
 - AWS Console;
 - API;
 
-# 2. Users, Groups and polices 🧑👨‍👩‍👧‍👦 📜
+# 2. Users, Groups and policies 🧑👨‍👩‍👧‍👦 📜
 
 - **Users**: Who can access to the services and work on them. When some user is created, by default it doesn't have any privileges. 
 - **Groups**: They organize the conjunct of users with the same privileges.
@@ -50,7 +50,7 @@ When the policy is applied to one single user or role (1-1 relationship).
 
 When the policy is applied to a groups (1-N relationship).
 
-## 5.2. Resource Police
+## 5.2. Resource Policy
 
 When the policy is applied to a service (or resource) such as EC2, S3, etc.
 
@@ -60,7 +60,7 @@ When the policy is applied to a service (or resource) such as EC2, S3, etc.
 
 - Do not use the root as user;
 - Create IAM individual accounts;
-- Create groups and polices to them instead of a single user;
+- Create groups and policies to them instead of a single user;
 - Allow as little permission as possible;
 - As beginner, start using AWS managed instead of Customer managed policies;
 - Able the MFA;
