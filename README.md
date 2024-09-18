@@ -13,3 +13,5 @@ So, this study is split in some files, such is:
 - 6-vpc.md
 - 7-elb.md
 - 8-db.md
+- 9-dns.md
+- 10-lambda.md
