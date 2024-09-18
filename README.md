@@ -15,3 +15,4 @@ So, this study is split in some files, such is:
 - 8-db.md
 - 9-dns.md
 - 10-lambda.md
+- 11-storage.md
