@@ -67,6 +67,12 @@ Snapshots can be restored to volumes of different sizes or types, providing flex
 2. The snapshot is stored in S3 as an incremental backup.
 3. When needed, restore a snapshot to create a new EBS volume or use it as part of disaster recovery.
 
+## 3.4. Moving the EBS volume to another AZ
+
+EBS (Elastic Block Store) volumes can only be attached to EC2 instances that are in the **same Availability Zone (AZ)**, however, there are two ways to migrate a EBS volume to another AZ:
+
+![Migrating EBS volume to another AZ diagram](./imgs/storage-moving-ebs.jpg)
+
 # 4. AMI 🖼️
 
 An AWS **AMI (Amazon Machine Image)** is a template that contains the necessary information to launch a virtual server (EC2 instance) in the Amazon Web Services (AWS) cloud. It serves as a blueprint for creating instances, allowing you to quickly deploy pre-configured environments. Here’s what it includes and how it works:
@@ -114,3 +120,41 @@ An AWS **AMI (Amazon Machine Image)** is a template that contains the necessary 
 1. Create an AMI: You can create a custom AMI from an existing EC2 instance. This AMI will contain the OS, applications, and data from the instance at the time the AMI is created.
 2. Launch an Instance: Use the AMI to launch new EC2 instances. These instances will start with the OS, software, and data from the AMI.
 3. Share or Distribute: You can share your custom AMIs with other AWS accounts or the public if desired.
+
+# 5. EFS 📂
+
+**EFS (Elastic File System)** is a scalable, fully managed file storage service provided by AWS designed to be used with Amazon EC2 instances. It allows multiple EC2 instances to simultaneously access data using a shared file system. EFS is ideal for scenarios where you need file-level storage that can be accessed by several compute resources at once.
+
+## 5.1. Key features
+
+- **Scalable:** EFS automatically scales up or down based on the amount of data stored, so you pay only for the storage you use.
+- **Elastic:** No need to provision or manage storage capacity; it grows and shrinks as needed.
+- **Multi-AZ Availability:** EFS is designed to provide high availability and durability by storing data across multiple Availability Zones.
+- **Shared File System:** Multiple EC2 instances across different availability zones can access the same file system concurrently.
+- **POSIX-Compliant:** EFS supports file systems that comply with the Portable Operating System Interface (POSIX) standard, making it suitable for applications that require a file system interface and file access permissions.
+- **Data Encryption:** You can enable encryption both at rest and in transit for your data.
+- **Performance Modes:**
+    - **General Purpose:** Suitable for most workloads.
+    - **Max I/O:** Ideal for large-scale, highly parallel applications like big data processing.
+- **Bursting Throughput:** EFS can handle spikes in workloads by allowing file systems to burst to higher throughput levels.
+
+## 5.2. Use cases
+
+- **Content Management:** Shared storage for web servers or content management systems.
+- **Big Data and Analytics:** Parallel data processing and analytics.
+- **Home Directories:** Centralized file storage for user home directories.
+- **Machine Learning:** Shared storage for distributed machine learning training.
+
+## 5.3. EFS vs EBS
+
+| **Characteristic**  | **EFS (Elastic File System)**           | **EBS (Elastic Block Store)**            |
+|---------------------|-----------------------------------------|------------------------------------------|
+| **Storage Type**    | File-level storage (shared)            | Block-level storage (single instance)    |
+| **Access**          | Multi-instance, multi-AZ               | Single instance, single AZ (unless detached) |
+| **Use Case**        | Shared file system for multiple EC2 instances | Dedicated storage for a single EC2 instance, ideal for databases |
+| **Performance**     | Network-based, higher latency           | Low-latency, high-performance            |
+| **Scaling**         | Automatically scales with usage        | Pre-provisioned size                     |
+| **Durability**      | Multi-AZ replication                    | AZ-specific (Snapshots for backup)      |
+| **Pricing**         | Pay for what you use                    | Pay for what you provision               |
+
+![EFS diagram](./imgs/storage-efs.jpg)
