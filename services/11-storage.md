@@ -12,7 +12,7 @@
 
 EBS is often used for databases, file systems, and applications that require low-latency access to block storage.
 
-![EBS diagram](./imgs/storage-ebs.jpg)
+![EBS diagram](../imgs/storage-ebs.jpg)
 
 # 2. Kinds of EBS volumes 💿📀
 
@@ -71,7 +71,7 @@ Snapshots can be restored to volumes of different sizes or types, providing flex
 
 EBS (Elastic Block Store) volumes can only be attached to EC2 instances that are in the **same Availability Zone (AZ)**, however, there are two ways to migrate a EBS volume to another AZ:
 
-![Migrating EBS volume to another AZ diagram](./imgs/storage-moving-ebs.jpg)
+![Migrating EBS volume to another AZ diagram](../imgs/storage-moving-ebs.jpg)
 
 # 4. AMI 🖼️
 
@@ -157,7 +157,7 @@ An AWS **AMI (Amazon Machine Image)** is a template that contains the necessary 
 | **Durability**      | Multi-AZ replication                    | AZ-specific (Snapshots for backup)      |
 | **Pricing**         | Pay for what you use                    | Pay for what you provision               |
 
-![EFS diagram](./imgs/storage-efs.jpg)
+![EFS diagram](../imgs/storage-efs.jpg)
 
 # 6. CloudFormation 🏗️☁️
 

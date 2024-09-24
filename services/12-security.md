@@ -124,7 +124,7 @@ AWS **Cognito** is a fully managed service from Amazon Web Services that provide
 - **Federated Identity Management:** Use Cognito Identity Pools to allow users to authenticate with social providers (like Google or Facebook) or enterprise IdPs.
 - **Securing AWS Resources:** Use Identity Pools to provide users with temporary AWS credentials to access AWS services securely.
 
-![Cognito Diagram](./imgs/security-cognito.jpg)
+![Cognito Diagram](../imgs/security-cognito.jpg)
 
 # 4. Encryption 🔒🔑
 
@@ -161,7 +161,7 @@ AWS **Cognito** is a fully managed service from Amazon Web Services that provide
         - **Database Encryption**: Specific encryption mechanisms applied to database files or individual records.
         - **File Encryption**: Encrypting individual files to protect sensitive data.
 
-![Encryption diagram](./imgs/security-encryption.jpg)
+![Encryption diagram](../imgs/security-encryption.jpg)
 
 # 5. AWS KMS 👨🏽‍💼🔑
 

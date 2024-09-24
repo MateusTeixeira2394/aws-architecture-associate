@@ -18,7 +18,7 @@ A **Virtual Private Cloud** (VPC) in Amazon Web Services (AWS) is a virtual netw
 
 - **VPN and Direct Connect**: You can also connect your VPC to your on-premises data center using a VPN connection or AWS Direct Connect.
 
-![VPC diagram](./imgs/vpc-intro.jpg)
+![VPC diagram](../imgs/vpc-intro.jpg)
 
 **OBS**: The VPC is a virtual (or logical) isolation your contents from another contents. It is not physics isolated. If you want, you can reserve a whole physical server or rack, for instance.
 
@@ -36,13 +36,13 @@ It is a highly scalable and central hub that you can use to connect your Virtual
 ## 2.2. Full Mesh
 It refers to a network topology where each node (e.g., VPCs, on-premises networks) is directly connected to every other node. In a full mesh configuration, every possible connection between nodes is established, leading to high redundancy and reliability but also increased complexity as the number of connections grows.
 
-![Transit Gateway vs Full Mesh](./imgs/vpc-transit-gateway.jpg)
+![Transit Gateway vs Full Mesh](../imgs/vpc-transit-gateway.jpg)
 
 ## 2.3. Peering Connection
 
 The Transit Gateway isn't a unique way to stablish a connection among VPCs. A **peering connection** refers to a network connection between two Virtual Private Clouds (VPCs) that allows them to communicate with each other as if they were part of the same network. VPC Peering enables you to route traffic between the VPCs using private IP addresses, and it can be set up between VPCs in the same AWS account or across different AWS accounts.
 
-![Peering connections image](./imgs/vpc-peering-connection.jpg)
+![Peering connections image](../imgs/vpc-peering-connection.jpg)
 
 If you have many VPCs or need to connect VPCs to on-premises networks, Transit Gateway simplifies the architecture by acting as a central hub.
 
@@ -67,7 +67,7 @@ In AWS, Security Groups (SG) and Network Access Control Lists (NACLs) are used t
 | **Logging & Auditing** | Logs available through CloudWatch and other tools | Logs available through CloudWatch and other tools |
 | **Use Cases**          | Ideal for managing traffic to specific instances, dynamic applications | Ideal for managing broad traffic rules for entire subnets, simpler scenarios |
 
-![Stateful vs Stateless image](./imgs/vpc-stateful-stateless.jpg)
+![Stateful vs Stateless image](../imgs/vpc-stateful-stateless.jpg)
 
 ## 3.1. Security Group
 
@@ -90,13 +90,13 @@ As mentioned earlier in the subtopic [2.3. Peering Connection](#23-peering-conne
 
 To make it works, you must to create a peering connection, informing the origin VPC and the destiny one. Besides that, you must inform the new VPC route in both VPC routing table and allow their communication in both VPC securities group.
 
-![VPC peering connection image](./imgs/vpc-peering-detailed.jpg)
+![VPC peering connection image](../imgs/vpc-peering-detailed.jpg)
 
 ## 4.1. Overlapping 
 
 You must be aware with **Overlapping** that is when two or more VPC share the same AP address range.  This overlap can create routing conflicts and prevent the successful establishment of a peering connection.
 
-![VPC Overlapping image](./imgs/vpc-overlapping.jpg)
+![VPC Overlapping image](../imgs/vpc-overlapping.jpg)
 
 ## 4.2. Transit
 
@@ -104,7 +104,7 @@ You must be aware with **Overlapping** that is when two or more VPC share the sa
 
 VPC peering connection **does not support transitive routing**. A VPC cannot route traffic to another VPC via a third VPC to which it is peered.
 
-![VPC transit image](./imgs/vpc-transit.jpg)
+![VPC transit image](../imgs/vpc-transit.jpg)
 
 # 5. VPC Endpoints 🛣️
 

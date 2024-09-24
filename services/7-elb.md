@@ -65,13 +65,13 @@ Scaling Up and Scaling Out are two different strategies for handling increased l
 
 AWS Auto Scaling simplifies the management of compute resources, ensuring that your application remains responsive and cost-efficient by automatically adjusting the capacity to match the demand.
 
-![Auto Scaling image](./imgs/elb-auto-scaling.jpg)
+![Auto Scaling image](../imgs/elb-auto-scaling.jpg)
 
 # 4. Load Balancers ⚖️
 
 A load balancer is a service that automatically distributes incoming application traffic across multiple targets, such as **EC2 instances**, **containers**, or **IP addresses**. AWS provides different types of load balancers through its Elastic Load Balancing (ELB) service, which helps to increase the availability and fault tolerance of your applications by distributing the traffic evenly and routing it to healthy instances only.
 
-![Load Balancer diagram image](./imgs/elb-load-balancer.jpg)
+![Load Balancer diagram image](../imgs/elb-load-balancer.jpg)
 
 ## 4.1. Types of Load Balancers 
 
@@ -116,6 +116,6 @@ A load balancer is a service that automatically distributes incoming application
    - **IP Target Groups**: Used when targets are IP addresses.
    - **Lambda Target Groups**: Used when the target is a Lambda function.
 
-![Target Group diagram](./imgs/elb-target-group.jpg)
+![Target Group diagram](../imgs/elb-target-group.jpg)
 
 

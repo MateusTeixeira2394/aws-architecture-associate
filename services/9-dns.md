@@ -41,7 +41,7 @@ DNS, or **Domain Name System**, is a fundamental part of the internet's infrastr
 8. **Caching:**
    - To speed up future requests, the IP address and domain name are cached by the resolver and your computer for a period of time (determined by the Time-To-Live or TTL value in the DNS records).
 
-![Diagram of how the dns works](./imgs/dns-how-it-works.jpg)
+![Diagram of how the dns works](../imgs/dns-how-it-works.jpg)
 
 ## 1.3. Key Components of DNS
 
@@ -172,7 +172,7 @@ This is used within an Amazon VPC (Virtual Private Cloud) to manage DNS records 
 - **Usage**: Provides multiple IP addresses (up to 8) in response to a DNS query and allows health checks on each.
 - **Scenario**: Ideal for distributing traffic across multiple resources and providing DNS failover if any resource becomes unhealthy.
 
-![Route 53 routing polices](./imgs/dns-route-53-routing-polices.jpg)
+![Route 53 routing polices](../imgs/dns-route-53-routing-polices.jpg)
 
 # 5. Traffic Policy 👮🏽‍♂️
 
@@ -216,13 +216,13 @@ A Traffic Policy in AWS Route 53 is a powerful feature that allows you to define
 - Scalability and Availability: Like other AWS services, Route 53 Resolver is scalable and highly available, ensuring consistent DNS query performance across networks.
 - Security: DNS queries can be controlled and monitored with AWS services like VPC flow logs, providing visibility into DNS traffic patterns.
 
-![Route 53 resolver diagram](./imgs/dns-route-53-resolver.jpg)
+![Route 53 resolver diagram](../imgs/dns-route-53-resolver.jpg)
 
 # 7. Cloudfront ☁️🌎
 
 Amazon **CloudFront** is a **Content Delivery Network (CDN)** service provided by AWS that securely delivers content (such as websites, APIs, videos, or software) to users globally with low latency and high transfer speeds. It acts as a distribution network of globally located servers (called edge locations) that cache and serve content to users from the closest server, improving performance and reliability.
 
-![Cloudfront image](./imgs/dns-cloudfront.jpg)
+![Cloudfront image](../imgs/dns-cloudfront.jpg)
 
 ## 7.1. Key features:
 - Global Edge Locations:
@@ -252,7 +252,7 @@ Amazon **CloudFront** is a **Content Delivery Network (CDN)** service provided b
 - Real-Time Monitoring:
    - CloudFront integrates with Amazon CloudWatch, allowing you to monitor CDN performance, usage, and errors in real time. It also provides detailed analytics about request activity, cache hits/misses, and geographic distribution.
 
-   ![Cloudfront diagram](./imgs/dns-cloudfront-diagram.jpg)
+   ![Cloudfront diagram](../imgs/dns-cloudfront-diagram.jpg)
 
    ## 7.2. OAI
 
@@ -263,4 +263,4 @@ Amazon **CloudFront** is a **Content Delivery Network (CDN)** service provided b
 
    **Lambda Edge** is an AWS feature that allows you to run serverless code closer to your users by executing AWS Lambda functions at CloudFront edge locations, before or after each request and before or after each response, like the image below. This enables you to customize and modify the content delivered by CloudFront in real time, without managing servers. Lambda Edge helps improve performance and allows you to apply logic at the edge, resulting in faster responses and highly customizable content.
 
-   ![Lambda Edge diagram](./imgs/dns-lambda-edge.jpg)
+   ![Lambda Edge diagram](../imgs/dns-lambda-edge.jpg)

@@ -30,7 +30,7 @@ The user can authenticate itself through:
 
 # 4. STS - Security Token Service 🔐
 
-![How the STS works](./imgs/sts.jpg)
+![How the STS works](../imgs/sts.jpg)
 
 WS Security Token Service (STS) is a web service that enables you to request temporary, limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users you authenticate (federated users). These temporary credentials provide the same permissions as long-term security credentials, such as IAM user credentials
 
@@ -54,7 +54,7 @@ When the policy is applied to a groups (1-N relationship).
 
 When the policy is applied to a service (or resource) such as EC2, S3, etc.
 
-![Identity vs Resource Policy Diagram](./imgs/indentity-vs-resource.jpg)
+![Identity vs Resource Policy Diagram](../imgs/indentity-vs-resource.jpg)
 
 # 6. Best practices 🏆
 

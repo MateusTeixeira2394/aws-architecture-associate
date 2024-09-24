@@ -58,7 +58,7 @@ So, Cloud computing is the delivery of computing services over the internet ("th
 
 - **Function as a Service (FaaS):** A serverless computing service where developers can build and run application functionalities without managing servers. Examples include AWS Lambda, Google Cloud Functions, and Azure Functions.
 
-![Iaas Paas Saas diagram](./imgs/iaas-paas-saas-diagram.png)
+![Iaas Paas Saas diagram](../imgs/iaas-paas-saas-diagram.png)
 
 # 4. Public, Private and Hybrid 🌐🔒☁️
 
@@ -108,7 +108,7 @@ So, Cloud computing is the delivery of computing services over the internet ("th
 - Microsoft Azure Stack
 - Google Anthos
 
-![Private, Public and Hybrid Clouds](./imgs/public-private-hybrid-cloud.png)
+![Private, Public and Hybrid Clouds](../imgs/public-private-hybrid-cloud.png)
 
 ## 4.4. Comparison
 

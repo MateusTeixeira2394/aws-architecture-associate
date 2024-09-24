@@ -2,7 +2,7 @@
 
 The AWS has many data centers distributed to the whole world, according to the image below. To organize its infrastructure, the AWS divides it in **regions**, **available zone**, **local zone**, **wavelength** and **outputs**.
 
-![AWS Infrastructure](./imgs/aws-infra.jpg)
+![AWS Infrastructure](../imgs/aws-infra.jpg)
 
 ## 1.1. Region
 
