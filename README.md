@@ -1,18 +1,60 @@
+# AWS Certified Solutions Architect - Associate (SAA-C03) Guide
 
-# Purpose
+# Introduction 🚩
 
-The purpose of this repository is to help developers to study to AWS Solution Architecture Associate certification.
+The AWS Certified Solutions Architect - Associate (SAA-C03) exam is designed for individuals who perform the role of a solutions architect. The exam validates a candidate’s ability to design solutions based on the AWS Well-Architected Framework.
 
-So, this study is split in some files, such is:
+The exam also validates the candidate’s ability to complete the following tasks:
 
-- 1-cloud-computing-concepts.md
-- 2-the-aws.md
-- 3-iam.md
-- 4-s3.md
-- 5-ec2.md
-- 6-vpc.md
-- 7-elb.md
-- 8-db.md
-- 9-dns.md
-- 10-lambda.md
-- 11-storage.md
+- Design solutions that incorporate AWS services to meet current business requirements and projected future needs.
+- Design secure, resilient, high-performance, and cost-effective architectures.
+- Analyze existing solutions and determine how to make improvements.
+
+# Exam content 🧾
+
+## Types of responses
+
+There are two types of questions on the exam:
+
+- **Multiple choice**: has one correct answer and three incorrect answers
+(distractors).
+- **Multiple response**: has two or more correct answers out of five or more
+answer options.
+
+## Ungraded Content
+
+The exam includes 15 ungraded questions that do not affect your score. AWS
+collects performance information on ungraded questions in order to
+reference them for future use as graded questions. Ungraded questions
+are not identified on the exam.
+
+## Content Summary
+
+This exam guide includes the exam weightings, content domains, and task statements. It does not provide a comprehensive list of exam content. However, additional context for each task statement is available to help you prepare for the exam.
+
+The exam has the following content domains and weightings:
+
+- **Domain 1**: Designing Secure Architectures (30% of content scored)
+- **Domain 2**: Designing Resilient Architectures (26% of content scored)
+- **Domain 3**: Designing High-Performance Architectures (24% of content scored)
+- **Domain 4**: Designing Cost-Optimized Architectures (20% of content scored)
+
+# Exam Scope 📚
+
+The following is a list of AWS services and features that are in scope for the exam. This list is not exhaustive and is subject to change. AWS offerings appear in categories that align with the primary functions of the offerings.
+
+- [Analytics](./analytics/README.md)
+- Storage
+- Database
+- Computing
+- Containers
+- Developer tools
+- AWS costs management
+- Management and governance
+- App integrations
+- Machine Learning
+- Transfer and migration
+- Network and Continuous Integration
+- Security, Identity and Compatibility
+- Serverless
+- Web and mobile development
