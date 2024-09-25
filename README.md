@@ -45,7 +45,7 @@ The following is a list of AWS services and features that are in scope for the e
 
 - [Analytics](./analytics/README.md)
 - [Storage](./storage/README.md)
-- Database
+- [Database](./database/README.md)
 - Computing
 - Containers
 - Developer tools
