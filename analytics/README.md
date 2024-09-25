@@ -8,6 +8,6 @@
 - [Amazon Kinesis](../services/amazon-kinesis.md)
 - [AWS Lake Formation](../services/aws-lake-formation.md)
 - [Amazon MSK](../services/amazon-msk.md)
-- [Amazon OpenSearch Service](../services/amazon-opensearch-service)
+- [Amazon OpenSearch Service](../services/amazon-opensearch-service.md)
 - [Amazon QuickSight](../services/amazon-quicksight.md)
 - [Amazon Redshift](../services/amazon-redshift.md)
