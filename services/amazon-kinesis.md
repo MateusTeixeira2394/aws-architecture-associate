@@ -15,6 +15,7 @@
      - **Kinesis Data Streams**: For building custom, real-time applications that process and analyze streaming data.
      - **Kinesis Data Firehose**: For loading streaming data into data lakes, data stores, and analytics services, such as Amazon S3, Amazon Redshift, and Amazon Elasticsearch Service.
      - **Kinesis Data Analytics**: For analyzing streaming data using standard SQL queries in real time.
+     - **Kinesis Video Streams**: Stream video data in real-time for analytics or storage.
 
 4. **Integration with AWS Services**:
    - Kinesis integrates seamlessly with other AWS services, including AWS Lambda, Amazon S3, Amazon Redshift, and AWS Glue, allowing for a cohesive data processing pipeline.
