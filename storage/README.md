@@ -3,3 +3,4 @@
 - [Amazon Elastic File System (Amazon EFS)](../services/amazon-efs.md)
 - [Simple Storage Service (S3)](../services/s3.md)
 - [Aws Storage Gateway](../services/aws-storage-gateway.md)
+- [Amazon FSx](../services/amazon-fsx.md)
