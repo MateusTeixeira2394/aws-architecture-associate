@@ -1,8 +1,8 @@
-# 1. Introduction 🚩
+# 1. RDS 💽☁️
 
 Amazon **Relational Database Service (RDS)** is a managed service provided by AWS that makes it easy to set up, operate, and scale a relational database in the cloud. It automates time-consuming tasks such as hardware provisioning, database setup, patching, and backups, allowing you to focus on your applications.
 
-# 2. Supported SQL Databases 💿
+# 2. Supported SQL Databases 💿📀
 
 RDS supports several popular database engines, including:
 
@@ -62,75 +62,7 @@ Bellow, follows the comparison of the databases available at the moment that thi
 
 You can use both features together to achieve high availability, data durability, and improved read performance.
 
-# 4. Backups
+# 4. Backups 💾
 
 - Automated: 1-35 days (1sec) -> s3 (free)
 - Manual: DB snapshot
-
-# 5. DynamoDB vs Elasticache
-
-## 5.1. Dynamo
-
-Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web Services (AWS). It is designed for applications that require low-latency, high-performance access to large amounts of data. DynamoDB is particularly well-suited for use cases such as real-time analytics, gaming, IoT, mobile apps, and more.
-
-## 5.2. Elasticache
-
-Amazon ElastiCache is a fully managed in-memory data store and caching service provided by Amazon Web Services (AWS). It is designed to improve the performance of your web applications by enabling faster data retrieval from in-memory databases, which can significantly reduce the load on your primary database.
-
-## 5.3. Difference
-
-| **Feature**           | **Amazon DynamoDB**                                            | **Amazon ElastiCache**                                                  |
-| --------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Purpose**           | Fully managed NoSQL database                                   | Fully managed in-memory data store and caching service                  |
-| **Data Model**        | Key-value and document store                                   | Key-value store (supports Redis and Memcached)                          |
-| **Data Storage**      | Persistent, stored on disk                                     | In-memory, typically non-persistent (Redis supports persistence)        |
-| **Performance**       | Low latency, high throughput                                   | Extremely low latency, sub-millisecond response times                   |
-| **Scalability**       | Automatically scales horizontally                              | Scales by adding nodes and increasing instance sizes                    |
-| **Replication**       | Multi-region, automatic scaling, and global tables             | Supports replication (Redis) and automatic failover                     |
-| **Data Durability**   | Durable with automatic backups and point-in-time recovery      | Volatile by default (Redis offers snapshot and AOF persistence options) |
-| **Use Case**          | Applications needing reliable, scalable storage                | Applications needing fast, in-memory data access                        |
-| **Common Use Cases**  | Real-time bidding, e-commerce, IoT, mobile apps                | Caching, session storage, real-time analytics, gaming leaderboards      |
-| **Supported Engines** | Proprietary (AWS-built NoSQL service)                          | Redis, Memcached                                                        |
-| **Capacity Modes**    | On-demand and provisioned capacity modes                       | Scales based on node addition and cluster configuration                 |
-| **Security**          | Encryption at rest and in transit, fine-grained access control | Encryption, VPC integration, and IAM support                            |
-
-# 6. Redshift 🟥
-
-Amazon **Redshift** is a fully managed data warehouse service provided by AWS (Amazon Web Services) that enables businesses to analyze large datasets quickly and cost-effectively. Redshift is designed to handle complex queries and analytics on vast amounts of structured data, making it ideal for use cases such as business intelligence, data lakes, reporting, and data warehousing.
-
-Here are key features and concepts of Amazon Redshift:
-
-- Massively Parallel Processing (MPP): Redshift distributes data across multiple nodes in a cluster and processes queries in parallel, speeding up complex queries on large datasets.
-
-- Columnar Storage: Instead of storing data in rows like traditional databases, Redshift stores data in columns, which reduces the amount of I/O required for queries, especially when only a few columns of data are needed.
-
-- Scalability: Redshift allows you to easily scale up or down by adding or removing nodes to your cluster. You can start small and grow as your data and processing needs increase.
-
-- Cost-Effective: It offers pay-as-you-go pricing and on-demand or reserved instance options, making it more affordable for large-scale data analytics compared to traditional on-premises data warehouses.
-
-- Integration with AWS Ecosystem: Redshift integrates seamlessly with other AWS services, such as S3 (for data storage), Glue (for ETL jobs), Athena, and QuickSight (for data visualization), among others.
-
-- Data Loading: You can load data into Redshift from multiple sources, such as Amazon S3, Amazon RDS, DynamoDB, or on-premises databases, using Redshift's COPY command, AWS Data Pipeline, or AWS Glue.
-
-- Redshift Spectrum: This feature allows you to query data directly from S3 without having to load it into Redshift first, which makes it easier to query large data lakes.
-
-- Security: Redshift offers encryption at rest and in transit, integrates with AWS IAM (Identity and Access Management), and supports Virtual Private Cloud (VPC) for network isolation.
-
-Amazon Redshift is commonly used for data warehousing, business intelligence, analytics workloads, and complex reporting at scale.
-
-# 7. Aurora DB ☁️
-
-- Started in 2014
-- Aws is owner
-- Mysql compatible
-- 5x faster than mysql and 3x faster than postgres
-- 10x cheaper
-- 10GB default
-- Auto-scaling with 64Gb default
-- Maximum 64TB
-- It is possible to create until 15 replica
-  - The **main process** handles database **writing** and each **replica** handles **reading**
-  - You can configure to many applications read the database using some replica without affecting the main process of the database
-- Recover: point in-time
-- Continuous backup: until 3 zones
-- Free tier is not available
