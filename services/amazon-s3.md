@@ -37,6 +37,8 @@ S3 organizes data into containers called buckets. Each bucket has a unique name 
 | **S3 Glacier Deep Archive**| Long-term archival data rarely accessed               | 99.999999999% (11 9's) | 99.9% over a year      | Lowest                 | Lowest cost; retrieval times range from 12 to 48 hours.                                                            |
 | **S3 Outposts**            | Local storage on AWS Outposts                         | 99.999999999% (11 9's) | 99.9% over a year      | Varies (based on Outpost) | Provides S3 storage on-premises for hybrid cloud environments.                                                     |
 
+![S3 Classes Types](../imgs/s3-classes-types.jpg)
+
 # 4. Versioning 🔢
 
 Each S3 file can be versioned to:
