@@ -43,6 +43,8 @@ The exam has the following content domains and weightings:
 
 The following is a list of AWS services and features that are in scope for the exam. This list is not exhaustive and is subject to change. AWS offerings appear in categories that align with the primary functions of the offerings.
 
+- [Cloud Computing Concepts](./services/cloud-computing-concepts.md)
+- [The infrastructure](./services/aws-infrastructure.md)
 - [Analytics](./analytics/README.md)
 - [Storage](./storage/README.md)
 - [Database](./database/README.md)
