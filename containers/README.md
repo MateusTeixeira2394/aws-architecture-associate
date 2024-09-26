@@ -1,5 +1,5 @@
 # Containers 📦🚢🏗️
 
 - [Amazon ECS](../services/amazon-ecs.md)
-- Amazon EKS
-- Amazon ECR
+- [Amazon EKS](../services/amazon-eks.md)
+- [Amazon ECR](../services/amazon-ecr.md)
