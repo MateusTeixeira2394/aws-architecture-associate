@@ -52,3 +52,7 @@
 
 ## 1.4. Summary
 Amazon FSx is a family of managed file systems designed for various use cases, such as Windows file shares, high-performance computing, Linux workloads, and hybrid cloud environments. It simplifies the setup, operation, and scaling of file storage in the cloud, offering multiple file system types with distinct advantages depending on the workload.
+
+## 1.5. Amazon EFS vs FSx
+
+[Amazon EFS vs FSx](../services/efs-vs-efx.md)

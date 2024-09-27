@@ -35,3 +35,7 @@
 | **Pricing**         | Pay for what you use                    | Pay for what you provision               |
 
 ![EFS diagram](../imgs/storage-efs.jpg)
+
+## 1.4. Amazon EFS vs FSx
+
+[Amazon EFS vs FSx](../services/efs-vs-efx.md)

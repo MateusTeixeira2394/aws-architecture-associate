@@ -249,4 +249,16 @@ Glacier's design is especially suitable for industries that require long-term re
 
 Amazon S3 Glacier is designed for low-cost, long-term storage of infrequently accessed data, offering a range of retrieval options based on the speed needed, all while maintaining high durability and security standards.
 
+| **Feature**               | **S3 Glacier Instant Retrieval** | **S3 Glacier Flexible Retrieval** | **S3 Glacier Deep Archive** |
+|---------------------------|----------------------------------|-----------------------------------|-----------------------------|
+| **Purpose**               | Long-term storage with instant access to data. | Low-cost archiving with flexible retrieval times. | Lowest-cost storage for data that is rarely accessed. |
+| **Retrieval Time**         | Milliseconds (instant access).   | Minutes to hours (Expedited: 1-5 min; Standard: 3-5 hrs; Bulk: 5-12 hrs). | Hours (Standard: 12 hrs; Bulk: up to 48 hrs). |
+| **Cost**                  | Higher than Flexible and Deep Archive due to instant access. | Lower than Instant Retrieval, but higher than Deep Archive. | Lowest cost among Glacier classes. |
+| **Use Case**              | Frequently accessed archival data (e.g., media archives, backups with immediate retrieval needs). | Infrequently accessed data where retrieval time is not critical (e.g., backups, compliance data). | Long-term archival data accessed once or twice a year (e.g., regulatory archives, disaster recovery). |
+| **Minimum Storage Duration** | 90 days                        | 90 days                           | 180 days                    |
+| **Durability**            | 99.999999999% (11 nines)         | 99.999999999% (11 nines)          | 99.999999999% (11 nines)    |
+| **Storage Cost**          | Moderate                        | Lower than Instant Retrieval      | Lowest                      |
+| **Retrieval Cost**        | Lowest retrieval cost (no additional fees for retrieval). | Expedited retrievals are more expensive, but Bulk retrievals are cost-effective. | Higher retrieval cost compared to Flexible, especially for expedited access. |
+
+
 ![S3 Glacier Classes](../imgs/s3-glacier-classes.jpg)
