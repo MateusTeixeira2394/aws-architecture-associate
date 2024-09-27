@@ -211,3 +211,42 @@ There are two types of protection modes in S3 Object Lock:
 - **Data Integrity**: Preventing accidental or malicious deletion or modification of critical data.
 
 You can also combine Object Lock with **legal holds**, which can be placed on objects to prevent deletion until the hold is removed. Legal holds don't have an expiration date like retention periods, so they offer indefinite protection until lifted manually.
+
+# 11. S3 Glacier 🧊
+
+**Amazon S3 Glacier** is a cloud storage service provided by AWS, designed for long-term data archiving and backup at low costs. It's primarily used for infrequently accessed data that doesn’t require immediate retrieval. Here’s an overview of its key aspects:
+
+## 11.1. Purpose and Use Cases
+- **Archiving**: Ideal for data that must be kept for years, like compliance records, backups, medical records, and media archives.
+- **Infrequent Access**: S3 Glacier is not designed for frequently accessed data. It's optimized for scenarios where data retrieval can be delayed or planned in advance.
+
+## 11.2. Storage Classes
+S3 Glacier has multiple storage classes based on access needs:
+
+- **S3 Glacier**: Low-cost storage for data that can take several hours for retrieval.
+- **S3 Glacier Deep Archive**: Even lower cost but requires up to 12 hours for retrieval, suitable for data accessed once or twice a year.
+
+## 11.3. Retrieval Options
+- **Expedited**: Allows access to data in 1-5 minutes, but at a higher cost.
+- **Standard**: Data is retrieved in 3-5 hours, at moderate cost.
+- **Bulk**: The most cost-effective option, but retrieval can take 5-12 hours.
+
+## 11.4. Cost Efficiency
+S3 Glacier is much cheaper than standard S3 storage because it's designed for rarely accessed data. You pay mainly for storage, and retrieval costs vary based on the speed and size of the data request.
+
+## 11.5. Security and Durability
+- **Encryption:** Data is encrypted at rest using server-side encryption.
+- **Durability:** Amazon guarantees "99.999999999%" durability, meaning data is highly protected against loss.
+- **Access Control:** You can define fine-grained access policies using IAM roles and bucket policies to ensure only authorized users can access the archived data.
+
+## 11.6. Lifecycle Integration
+S3 Glacier integrates well with other S3 storage classes. Through S3's Lifecycle Policies, you can automatically transition objects to Glacier after a certain period of inactivity. This can help optimize costs by moving data to cheaper storage over time.
+
+## 11.7. Use in Compliance and Governance
+Glacier's design is especially suitable for industries that require long-term retention of data for compliance (e.g., healthcare, finance). It supports features like Vault Lock that allow users to create write-once-read-many (WORM) policies to ensure data integrity over time.
+
+## 11.8. Summary
+
+Amazon S3 Glacier is designed for low-cost, long-term storage of infrequently accessed data, offering a range of retrieval options based on the speed needed, all while maintaining high durability and security standards.
+
+![S3 Glacier Classes](../imgs/s3-glacier-classes.jpg)
