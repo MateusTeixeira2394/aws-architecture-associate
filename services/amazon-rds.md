@@ -66,3 +66,51 @@ You can use both features together to achieve high availability, data durability
 
 - Automated: 1-35 days (1sec) -> s3 (free)
 - Manual: DB snapshot
+
+# 5. What is Amazon RDS Proxy?
+
+**Amazon RDS Proxy** is a fully managed, highly available database proxy service designed to improve the performance, scalability, and security of your applications that use **Amazon RDS** or **Aurora** databases. RDS Proxy sits between your application and the database, managing database connections more efficiently, especially for applications with unpredictable workloads or many simultaneous connections.
+
+## 5.1. Key Features of RDS Proxy:
+
+1. **Connection Pooling**:
+   - RDS Proxy manages a pool of database connections and reuses them efficiently. This reduces the overhead of opening and closing new database connections, particularly in serverless architectures or environments with many short-lived connections (e.g., Lambda functions).
+   
+2. **Improved Scalability**:
+   - By managing connection pools, RDS Proxy allows your application to handle a higher number of concurrent connections without overwhelming the database, leading to better resource utilization and scalability.
+
+3. **High Availability**:
+   - RDS Proxy automatically handles failover for Multi-AZ RDS and Aurora databases. In case of a database failover, RDS Proxy ensures a quick transition, allowing applications to continue operating with minimal downtime.
+
+4. **Enhanced Security**:
+   - RDS Proxy allows you to authenticate your applications to the database using **AWS Identity and Access Management (IAM)**, eliminating the need to store database credentials in your application code.
+   - It also supports **AWS Secrets Manager**, enabling secure and automatic credential rotation.
+
+5. **Improved Performance for AWS Lambda**:
+   - When using AWS Lambda with RDS or Aurora databases, RDS Proxy reduces the overhead caused by opening and closing database connections, which can lead to latency issues in serverless environments. RDS Proxy optimizes connection reuse, resulting in faster execution.
+
+6. **Automatic Failover**:
+   - RDS Proxy can detect if a primary database becomes unavailable and automatically routes connections to a standby instance, ensuring uninterrupted application availability.
+
+7. **Support for Read and Write Queries**:
+   - RDS Proxy supports both read and write queries, making it flexible for various types of workloads, including read-heavy or write-heavy applications.
+
+## 5.2. Use Cases for RDS Proxy:
+
+1. **Serverless Applications**:
+   - In serverless environments like AWS Lambda, RDS Proxy helps mitigate the problem of managing too many database connections by pooling connections, thus avoiding the performance bottleneck that can occur when connections are rapidly opened and closed.
+   
+2. **Connection-Intensive Workloads**:
+   - Applications that require a high number of simultaneous connections to the database, such as microservices architectures or web applications with many users, benefit from RDS Proxy's efficient connection management.
+
+3. **Enhanced Security**:
+   - Applications that need secure, scalable, and managed access to databases, leveraging IAM authentication or Secrets Manager for credential management, can benefit from RDS Proxy's enhanced security features.
+
+4. **Applications with Intermittent Traffic**:
+   - RDS Proxy is ideal for applications with spiky or unpredictable workloads because it efficiently manages the connection pooling, reducing the strain on the database.
+
+## 5.3. Conclusion:
+
+Amazon RDS Proxy optimizes the way applications connect to Amazon RDS and Aurora databases by providing features like connection pooling, high availability, security integration with IAM and Secrets Manager, and automatic failover. It is especially useful in environments with serverless applications, microservices, or connection-heavy workloads, ensuring improved performance and scalability.
+
+![RDS Proxy](../imgs/rds-proxy.jpg)
