@@ -62,6 +62,12 @@ Bellow, follows the comparison of the databases available at the moment that thi
 
 You can use both features together to achieve high availability, data durability, and improved read performance.
 
+| Feature                | Multi-AZ  | Cluster Multi-AZ | Read Replication |
+| ---------------------- | --------- | ---------------- | ---------------- |
+| Failover               | Automatic | Automatic        | Manual           |
+| Multi Region           | No        | No               | Yes              |
+| Waiting Read instances | No        | Yes              | Yes              |
+
 # 4. Backups 💾
 
 - Automated: 1-35 days (1sec) -> s3 (free)

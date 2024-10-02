@@ -1,14 +1,12 @@
-# 1. DynamoDB vs Elasticache
-
-## 1.1. DynamoDB
+# 1. DynamoDB
 
 Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web Services (AWS). It is designed for applications that require low-latency, high-performance access to large amounts of data. DynamoDB is particularly well-suited for use cases such as real-time analytics, gaming, IoT, mobile apps, and more.
 
-## 1.2. DAX
+## 1.1. DAX
 
 **DynamoDB Accelerator (DAX)** is an in-memory caching service designed specifically for Amazon DynamoDB. It helps improve the performance of read-heavy applications by providing fast, in-memory response times for queries and reads.
 
-### 1.2.1. Key Features
+### 1.1.1. Key Features
 
 - **In-Memory Caching:**
 
@@ -37,19 +35,19 @@ Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web
 - **Data Consistency:**
   - DAX supports strong consistency for read operations, allowing applications to retrieve the most current data as needed.
 
-### 1.2.2. Use cases
+### 1.1.2. Use cases
 
 - **Read-Heavy Workloads**: Applications that require high throughput for read operations, such as gaming leaderboards, social media feeds, or IoT applications.
 - **Caching Frequently Accessed Data**: Applications that frequently access the same data can benefit from the reduced latency offered by DAX.
 - **Real-Time Analytics**: Use cases that require quick data retrieval for real-time analysis or reporting can leverage DAX for faster insights.
 
-### 1.2.3. Summary
+### 1.1.3. Summary
 
 DynamoDB Accelerator (DAX) enhances the performance of Amazon DynamoDB by providing an in-memory caching layer that delivers fast read operations. It is particularly beneficial for applications with heavy read workloads, improving response times while reducing the load on the underlying DynamoDB tables.
 
 ![DAX diagram](../imgs/dynamodb-dax.jpg)
 
-## 1.3. DynamoDB Streams
+## 1.2. DynamoDB Streams
 
 DynamoDB Streams is a feature of Amazon DynamoDB that captures changes to items in a DynamoDB table in near real-time. Whenever data in the table is modified (e.g., inserted, updated, or deleted), DynamoDB Streams records these changes, making them available for processing by other AWS services or your application.
 
@@ -57,11 +55,11 @@ Thus, it provides a powerful mechanism to capture and react to changes in your D
 
 ![DynamoDB Streams](../imgs/dynamodb-streams.jpg)
 
-## 1.2. Elasticache
+# 2. Elasticache
 
-Amazon ElastiCache is a fully managed in-memory data store and caching service provided by Amazon Web Services (AWS). It is designed to improve the performance of your web applications by enabling faster data retrieval from in-memory databases, which can significantly reduce the load on your primary database.
+Amazon ElastiCache is a **fully managed in-memory data store and caching service** provided by Amazon Web Services (AWS). It is designed to improve the performance of your web applications by enabling faster data retrieval from in-memory databases, which can significantly reduce the load on your primary database.
 
-## 1.3. Difference
+# 3. DynamoDB vs Elasticache
 
 | **Feature**           | **Amazon DynamoDB**                                            | **Amazon ElastiCache**                                                  |
 | --------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
