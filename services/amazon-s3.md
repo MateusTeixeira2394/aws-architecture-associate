@@ -28,14 +28,14 @@ S3 organizes data into containers called buckets. Each bucket has a unique name 
 
 # 3. Storage Classes 🧩
 
-| **Storage Class**          | **Use Case**                                          | **Durability**         | **Availability**       | **Storage Cost**       | **Characteristics**                                                                                             |
-|----------------------------|-------------------------------------------------------|------------------------|------------------------|------------------------|-----------------------------------------------------------------------------------------------------------------|
-| **S3 Standard**            | Frequently accessed data                              | 99.999999999% (11 9's) | 99.99% over a year     | Highest                | Designed for frequently accessed data with low latency and high throughput.                                    |
-| **S3 Intelligent-Tiering** | Unknown or changing access patterns                   | 99.999999999% (11 9's) | 99.9% over a year      | Varies (based on access patterns) | Automatically moves data between frequent and infrequent access tiers based on usage.                            |
-| **S3 One Zone-IA**         | Infrequently accessed data, rapid availability needed | 99.999999999% (11 9's) | 99.5% over a year      | Lower than S3 Standard | Lower cost; data stored in a single Availability Zone. Ideal for infrequent access data.                       |
-| **S3 Glacier**             | Archival data rarely accessed                         | 99.999999999% (11 9's) | 99.9% over a year      | Lower cost             | Retrieval times range from minutes to hours.                                                                     |
-| **S3 Glacier Deep Archive**| Long-term archival data rarely accessed               | 99.999999999% (11 9's) | 99.9% over a year      | Lowest                 | Lowest cost; retrieval times range from 12 to 48 hours.                                                            |
-| **S3 Outposts**            | Local storage on AWS Outposts                         | 99.999999999% (11 9's) | 99.9% over a year      | Varies (based on Outpost) | Provides S3 storage on-premises for hybrid cloud environments.                                                     |
+| **Storage Class**           | **Use Case**                                          | **Durability**         | **Availability**   | **Storage Cost**                  | **Characteristics**                                                                      |
+| --------------------------- | ----------------------------------------------------- | ---------------------- | ------------------ | --------------------------------- | ---------------------------------------------------------------------------------------- |
+| **S3 Standard**             | Frequently accessed data                              | 99.999999999% (11 9's) | 99.99% over a year | Highest                           | Designed for frequently accessed data with low latency and high throughput.              |
+| **S3 Intelligent-Tiering**  | Unknown or changing access patterns                   | 99.999999999% (11 9's) | 99.9% over a year  | Varies (based on access patterns) | Automatically moves data between frequent and infrequent access tiers based on usage.    |
+| **S3 One Zone-IA**          | Infrequently accessed data, rapid availability needed | 99.999999999% (11 9's) | 99.5% over a year  | Lower than S3 Standard            | Lower cost; data stored in a single Availability Zone. Ideal for infrequent access data. |
+| **S3 Glacier**              | Archival data rarely accessed                         | 99.999999999% (11 9's) | 99.9% over a year  | Lower cost                        | Retrieval times range from minutes to hours.                                             |
+| **S3 Glacier Deep Archive** | Long-term archival data rarely accessed               | 99.999999999% (11 9's) | 99.9% over a year  | Lowest                            | Lowest cost; retrieval times range from 12 to 48 hours.                                  |
+| **S3 Outposts**             | Local storage on AWS Outposts                         | 99.999999999% (11 9's) | 99.9% over a year  | Varies (based on Outpost)         | Provides S3 storage on-premises for hybrid cloud environments.                           |
 
 ![S3 Classes Types](../imgs/s3-classes-types.jpg)
 
@@ -59,9 +59,9 @@ Aware 💡: The user must be aware of using of version because it takes more spa
 
 # 5. Server Access Logging 📋
 
-Uou can track all the activities of any objects inside of a bucket such as some versioning, deletion or update, for instance, through the server access logging. 
+Uou can track all the activities of any objects inside of a bucket such as some versioning, deletion or update, for instance, through the server access logging.
 
-To do so: 
+To do so:
 
 1. You need to create a new bucket (to receive the logs);
 2. The log bucket must be in the same region of the data bucket (or target bucket);
@@ -90,20 +90,24 @@ To do so:
 Refers to the process of automatically copying objects between S3 buckets, either within the same AWS region or across different regions. This feature helps improve data availability, durability, and redundancy by ensuring that copies of your objects are stored in multiple locations.
 
 ## 7.1. Cross-Region Replication (CRR)
+
 - Copies objects from a bucket in one AWS region to a bucket in another region.
 - Useful for disaster recovery, compliance, and reducing latency by keeping data closer to users in different geographic regions.
 
 ## 7.2. Same-Region Replication (SRR)
+
 - Copies objects between buckets within the same region.
 - Useful for creating additional copies of data for compliance, sharing data across different accounts, or maintaining separate environments (e.g., production and testing).
 
 ## 7.3. Key Features
+
 - **Automatic Replication:** Once configured, new objects are automatically replicated according to the rules you define.
 - **Versioning Support:** Works with versioning, allowing you to replicate specific versions of objects.
 - **Selective Replication:** You can configure replication based on prefixes or tags, meaning you can replicate only certain objects or groups of objects.
 - **Replication Time Control (RTC):** An option to replicate objects within a predictable time frame, usually 15 minutes, to meet specific compliance or latency requirements.
 
 ## 7.4. Use Cases
+
 - **Disaster Recovery:** Ensure data is replicated to a geographically distant region, protecting against regional outages or disasters.
 - **Compliance:** Meet legal or regulatory requirements that mandate data to be stored in multiple locations.
 - **Data Localization:** Replicate data to specific regions to comply with data sovereignty laws.
@@ -130,7 +134,6 @@ Like **Bucket Polices**, ACL is applied to the bucket too.
 
 **IAM Polices** > **Bucket Policies** > **ACL**
 
-
 # 9. S3 Encryption 🔐
 
 Amazon S3 offers several encryption options to help you secure your data at rest. The key differences between SSE-S3, SSE-KMS, SSE-C, and CSE relate to how and where the encryption keys are managed:
@@ -139,7 +142,7 @@ Amazon S3 offers several encryption options to help you secure your data at rest
 
 - **It means:** Server-Side Encryption with Amazon S3-Managed Keys.
 - **Key Management**: Managed entirely by AWS.
-- **How it Works**: 
+- **How it Works**:
   - Amazon S3 encrypts each object with a unique key.
   - It then encrypts the key itself with a master key that it regularly rotates.
   - All these processes are managed by AWS.
@@ -149,7 +152,7 @@ Amazon S3 offers several encryption options to help you secure your data at rest
 
 - **It means**: Server-Side Encryption with AWS Key Management Service Keys.
 - **Key Management**: Managed by AWS KMS (Key Management Service).
-- **How it Works**: 
+- **How it Works**:
   - Each object is encrypted with a data key.
   - The data key is itself encrypted with a customer master key (CMK) stored in AWS KMS.
   - You have more control over key management and permissions.
@@ -159,7 +162,7 @@ Amazon S3 offers several encryption options to help you secure your data at rest
 
 - **It means**: Server-Side Encryption with Customer-Provided Keys.
 - **Key Management**: Managed by the customer (you provide the encryption keys).
-- **How it Works**: 
+- **How it Works**:
   - You provide the encryption key to Amazon S3 with each request to write or read an object.
   - S3 then uses your provided key to perform the encryption or decryption but doesn't store the key itself.
 - **Use Case**: When you want complete control over the encryption keys and don't want AWS to store or manage the keys.
@@ -168,7 +171,7 @@ Amazon S3 offers several encryption options to help you secure your data at rest
 
 - **It means**: Client-Side Encryption.
 - **Key Management**: Managed entirely by the customer, outside of AWS.
-- **How it Works**: 
+- **How it Works**:
   - The data is encrypted by the client before it's uploaded to Amazon S3.
   - You manage the keys and encryption process on your end.
   - S3 stores the encrypted data without knowing the keys or being involved in the encryption process.
@@ -183,7 +186,6 @@ Amazon S3 offers several encryption options to help you secure your data at rest
 
 ![S3 Encryptions comparison](../imgs/s3-encryption.jpg)
 
-
 # 10. Object Lock 🔒
 
 Amazon S3 Object Lock is a feature that enables you to store objects using a WORM (Write Once, Read Many) model. This prevents objects from being deleted or overwritten for a specified retention period. It's commonly used for regulatory compliance, ensuring that data remains immutable during a specified retention period.
@@ -193,6 +195,7 @@ Amazon S3 Object Lock is a feature that enables you to store objects using a WOR
 There are two types of protection modes in S3 Object Lock:
 
 - **Governance Mode**:
+
   - Allows users with special permissions to modify or delete the object during the retention period.
   - It ensures that most users can't overwrite or delete the object but allows certain users with specific permissions (like s3:BypassGovernanceRetention) to make changes if needed.
 
@@ -217,49 +220,55 @@ You can also combine Object Lock with **legal holds**, which can be placed on ob
 **Amazon S3 Glacier** is a cloud storage service provided by AWS, designed for long-term data archiving and backup at low costs. It's primarily used for infrequently accessed data that doesn’t require immediate retrieval. Here’s an overview of its key aspects:
 
 ## 11.1. Purpose and Use Cases
+
 - **Archiving**: Ideal for data that must be kept for years, like compliance records, backups, medical records, and media archives.
 - **Infrequent Access**: S3 Glacier is not designed for frequently accessed data. It's optimized for scenarios where data retrieval can be delayed or planned in advance.
 
 ## 11.2. Storage Classes
+
 S3 Glacier has multiple storage classes based on access needs:
 
 - **S3 Glacier**: Low-cost storage for data that can take several hours for retrieval.
 - **S3 Glacier Deep Archive**: Even lower cost but requires up to 12 hours for retrieval, suitable for data accessed once or twice a year.
 
 ## 11.3. Retrieval Options
+
 - **Expedited**: Allows access to data in 1-5 minutes, but at a higher cost.
 - **Standard**: Data is retrieved in 3-5 hours, at moderate cost.
 - **Bulk**: The most cost-effective option, but retrieval can take 5-12 hours.
 
 ## 11.4. Cost Efficiency
+
 S3 Glacier is much cheaper than standard S3 storage because it's designed for rarely accessed data. You pay mainly for storage, and retrieval costs vary based on the speed and size of the data request.
 
 ## 11.5. Security and Durability
+
 - **Encryption:** Data is encrypted at rest using server-side encryption.
 - **Durability:** Amazon guarantees "99.999999999%" durability, meaning data is highly protected against loss.
 - **Access Control:** You can define fine-grained access policies using IAM roles and bucket policies to ensure only authorized users can access the archived data.
 
 ## 11.6. Lifecycle Integration
+
 S3 Glacier integrates well with other S3 storage classes. Through S3's Lifecycle Policies, you can automatically transition objects to Glacier after a certain period of inactivity. This can help optimize costs by moving data to cheaper storage over time.
 
 ## 11.7. Use in Compliance and Governance
+
 Glacier's design is especially suitable for industries that require long-term retention of data for compliance (e.g., healthcare, finance). It supports features like Vault Lock that allow users to create write-once-read-many (WORM) policies to ensure data integrity over time.
 
 ## 11.8. Summary
 
 Amazon S3 Glacier is designed for low-cost, long-term storage of infrequently accessed data, offering a range of retrieval options based on the speed needed, all while maintaining high durability and security standards.
 
-| **Feature**               | **S3 Glacier Instant Retrieval** | **S3 Glacier Flexible Retrieval** | **S3 Glacier Deep Archive** |
-|---------------------------|----------------------------------|-----------------------------------|-----------------------------|
-| **Purpose**               | Long-term storage with instant access to data. | Low-cost archiving with flexible retrieval times. | Lowest-cost storage for data that is rarely accessed. |
-| **Retrieval Time**         | Milliseconds (instant access).   | Minutes to hours (Expedited: 1-5 min; Standard: 3-5 hrs; Bulk: 5-12 hrs). | Hours (Standard: 12 hrs; Bulk: up to 48 hrs). |
-| **Cost**                  | Higher than Flexible and Deep Archive due to instant access. | Lower than Instant Retrieval, but higher than Deep Archive. | Lowest cost among Glacier classes. |
-| **Use Case**              | Frequently accessed archival data (e.g., media archives, backups with immediate retrieval needs). | Infrequently accessed data where retrieval time is not critical (e.g., backups, compliance data). | Long-term archival data accessed once or twice a year (e.g., regulatory archives, disaster recovery). |
-| **Minimum Storage Duration** | 90 days                        | 90 days                           | 180 days                    |
-| **Durability**            | 99.999999999% (11 nines)         | 99.999999999% (11 nines)          | 99.999999999% (11 nines)    |
-| **Storage Cost**          | Moderate                        | Lower than Instant Retrieval      | Lowest                      |
-| **Retrieval Cost**        | Lowest retrieval cost (no additional fees for retrieval). | Expedited retrievals are more expensive, but Bulk retrievals are cost-effective. | Higher retrieval cost compared to Flexible, especially for expedited access. |
-
+| **Feature**                  | **S3 Glacier Instant Retrieval**                                                                  | **S3 Glacier Flexible Retrieval**                                                                 | **S3 Glacier Deep Archive**                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Purpose**                  | Long-term storage with instant access to data.                                                    | Low-cost archiving with flexible retrieval times.                                                 | Lowest-cost storage for data that is rarely accessed.                                                 |
+| **Retrieval Time**           | Milliseconds (instant access).                                                                    | Minutes to hours (Expedited: 1-5 min; Standard: 3-5 hrs; Bulk: 5-12 hrs).                         | Hours (Standard: 12 hrs; Bulk: up to 48 hrs).                                                         |
+| **Cost**                     | Higher than Flexible and Deep Archive due to instant access.                                      | Lower than Instant Retrieval, but higher than Deep Archive.                                       | Lowest cost among Glacier classes.                                                                    |
+| **Use Case**                 | Frequently accessed archival data (e.g., media archives, backups with immediate retrieval needs). | Infrequently accessed data where retrieval time is not critical (e.g., backups, compliance data). | Long-term archival data accessed once or twice a year (e.g., regulatory archives, disaster recovery). |
+| **Minimum Storage Duration** | 90 days                                                                                           | 90 days                                                                                           | 180 days                                                                                              |
+| **Durability**               | 99.999999999% (11 nines)                                                                          | 99.999999999% (11 nines)                                                                          | 99.999999999% (11 nines)                                                                              |
+| **Storage Cost**             | Moderate                                                                                          | Lower than Instant Retrieval                                                                      | Lowest                                                                                                |
+| **Retrieval Cost**           | Lowest retrieval cost (no additional fees for retrieval).                                         | Expedited retrievals are more expensive, but Bulk retrievals are cost-effective.                  | Higher retrieval cost compared to Flexible, especially for expedited access.                          |
 
 ![S3 Glacier Classes](../imgs/s3-glacier-classes.jpg)
 
@@ -270,17 +279,21 @@ Amazon S3 Glacier is designed for low-cost, long-term storage of infrequently ac
 ## 12.1. Key Features of S3 Select:
 
 1. **Efficient Data Retrieval**:
+
    - Instead of downloading the entire file, you can use SQL queries to retrieve only the data you need (e.g., specific rows or columns from a CSV or JSON file).
 
 2. **Works with Various Formats**:
+
    - S3 Select supports structured data formats like **CSV**, **JSON**, and **Apache Parquet**.
    - It can handle compressed files, supporting formats such as GZIP and BZIP2.
 
 3. **Simple SQL Querying**:
+
    - You can use simple **SQL syntax** to filter data, apply conditions, and retrieve only the relevant parts of the object.
    - Example query: `SELECT s.name, s.age FROM s3object s WHERE s.age > 30`
 
 4. **Reduced Data Transfer and Processing**:
+
    - By querying only the necessary data, S3 Select reduces the amount of data transferred over the network and minimizes the processing workload on the client side.
 
 5. **Seamless Integration with Other AWS Services**:
@@ -298,9 +311,11 @@ Imagine you have a 1GB CSV file stored in S3 with millions of rows, but you only
 ## 12.4. Example Workflow:
 
 1. **Store Data in S3**:
+
    - Upload a file in CSV, JSON, or Parquet format to an S3 bucket.
 
 2. **Query Data Using S3 Select**:
+
    - Send an SQL query using the S3 API or SDK to fetch the data you need.
    - Example SQL query for a CSV file:
      ```sql
@@ -323,3 +338,11 @@ Imagine you have a 1GB CSV file stored in S3 with millions of rows, but you only
 ## 12.7. Conclusion:
 
 **Amazon S3 Select** is an efficient way to query and retrieve specific data from objects stored in S3, allowing you to work with large datasets more effectively without having to download and process the entire file. It’s a powerful feature for optimizing data retrieval and reducing costs in data-heavy applications.
+
+# 13. S3 Storage Lens
+
+Amazon S3 Storage Lens is an analytics feature that provides insights into your S3 usage and activity across all your accounts and buckets. It offers a comprehensive view of your storage, allowing you to analyze metrics such as object counts, storage size, and request activity, all through a unified dashboard. S3 Storage Lens helps optimize storage costs, apply best practices, and improve data protection by providing recommendations based on your usage patterns.
+
+In summary, S3 Storage Lens is a tool for visualizing and optimizing S3 storage usage and activity, offering actionable insights and recommendations.
+
+![S3 Storage Lens](../imgs/s3-storage-lens.jpg)
