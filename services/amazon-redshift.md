@@ -28,4 +28,4 @@ Amazon Redshift is commonly used for data warehousing, business intelligence, an
 
 Data warehouse is like a central database in which joins data of vary sources (such as other databases, apis, aws tools, etc), where all the information can be analyzed and decisions can be made.
 
-
+![AWS Datawarehouse using redshift](../imgs/redshift-datawarehouse-architecture.png)

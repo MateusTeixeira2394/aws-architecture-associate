@@ -11,25 +11,31 @@ Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web
 ### 1.2.1. Key Features
 
 - **In-Memory Caching:**
-	- DAX provides an in-memory cache that stores frequently accessed data, reducing the need to query the DynamoDB database for every request.
+
+  - DAX provides an in-memory cache that stores frequently accessed data, reducing the need to query the DynamoDB database for every request.
 
 - **Microsecond Response Times:**
-	- With DAX, applications can achieve single-digit millisecond response times for read operations, significantly improving performance compared to the traditional DynamoDB read latencies.
+
+  - With DAX, applications can achieve single-digit millisecond response times for read operations, significantly improving performance compared to the traditional DynamoDB read latencies.
 
 - **Fully Managed:**
-    - DAX is a fully managed service, meaning AWS handles all the operational aspects, such as setup, patching, scaling, and replication, allowing developers to focus on building their applications.
+
+  - DAX is a fully managed service, meaning AWS handles all the operational aspects, such as setup, patching, scaling, and replication, allowing developers to focus on building their applications.
 
 - **Seamless Integration:**
-    - DAX is compatible with existing DynamoDB APIs, making it easy to integrate into existing applications with minimal code changes.
+
+  - DAX is compatible with existing DynamoDB APIs, making it easy to integrate into existing applications with minimal code changes.
 
 - **Cluster Configuration:**
-    - DAX can be deployed in clusters, which provide high availability and fault tolerance. Clusters can automatically scale to handle varying workloads.
+
+  - DAX can be deployed in clusters, which provide high availability and fault tolerance. Clusters can automatically scale to handle varying workloads.
 
 - **Write-Through Cache:**
-    - DAX automatically updates the cache whenever data is written to DynamoDB, ensuring that the cached data is always up-to-date.
+
+  - DAX automatically updates the cache whenever data is written to DynamoDB, ensuring that the cached data is always up-to-date.
 
 - **Data Consistency:**
-    - DAX supports strong consistency for read operations, allowing applications to retrieve the most current data as needed.
+  - DAX supports strong consistency for read operations, allowing applications to retrieve the most current data as needed.
 
 ### 1.2.2. Use cases
 
@@ -38,7 +44,10 @@ Amazon DynamoDB is a fully managed NoSQL database service provided by Amazon Web
 - **Real-Time Analytics**: Use cases that require quick data retrieval for real-time analysis or reporting can leverage DAX for faster insights.
 
 ### 1.2.3. Summary
+
 DynamoDB Accelerator (DAX) enhances the performance of Amazon DynamoDB by providing an in-memory caching layer that delivers fast read operations. It is particularly beneficial for applications with heavy read workloads, improving response times while reducing the load on the underlying DynamoDB tables.
+
+![DAX diagram](../imgs/dynamodb-dax.jpg)
 
 ## 1.3. DynamoDB Streams
 
