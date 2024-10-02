@@ -1,4 +1,4 @@
-# 6. Redshift
+# 1. Redshift
 
 Amazon **Redshift** is a fully managed data warehouse service provided by AWS (Amazon Web Services) that enables businesses to analyze large datasets quickly and cost-effectively. Redshift is designed to handle complex queries and analytics on vast amounts of structured data, making it ideal for use cases such as business intelligence, data lakes, reporting, and data warehousing.
 
@@ -21,3 +21,11 @@ Here are key features and concepts of Amazon Redshift:
 - Security: Redshift offers encryption at rest and in transit, integrates with AWS IAM (Identity and Access Management), and supports Virtual Private Cloud (VPC) for network isolation.
 
 Amazon Redshift is commonly used for data warehousing, business intelligence, analytics workloads, and complex reporting at scale.
+
+![Redshift Diagram](../imgs/redshift-diagram.jpg)
+
+# 1.1. Data Warehouse
+
+Data warehouse is like a central database in which joins data of vary sources (such as other databases, apis, aws tools, etc), where all the information can be analyzed and decisions can be made.
+
+
