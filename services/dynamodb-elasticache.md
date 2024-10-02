@@ -55,9 +55,36 @@ Thus, it provides a powerful mechanism to capture and react to changes in your D
 
 ![DynamoDB Streams](../imgs/dynamodb-streams.jpg)
 
+## 1.3. Global Tables
+
+**Global Tables** in Amazon DynamoDB are a feature that enables you to create **multi-region**, **fully replicated tables** for your applications. This allows for low-latency access to data from different geographical locations while maintaining a single, global view of your data.
+
+### 1.3.1. Key Features:
+
+- **Multi-Region Replication:** Global Tables automatically replicate your DynamoDB table's data across multiple AWS regions, ensuring that users in different locations can access the data with low latency.
+
+- **Fully Managed:** Amazon DynamoDB handles the complexities of replication, including conflict resolution and data consistency, so you can focus on your application rather than managing the infrastructure.
+
+- **Write and Read Access:** Global Tables allow both read and write access to your data from any of the replicated regions, enabling users to interact with the closest copy of the data.
+
+- **Conflict Resolution:** DynamoDB uses a last writer wins (LWW) strategy to resolve any conflicts that may arise during writes in different regions.
+
+- **Scalability:** Global Tables are designed to scale seamlessly, accommodating increases in traffic and data size across all regions.
+
+### 1.3.2. Use Cases:
+
+- **Global Applications:** Ideal for applications with a global user base that require low-latency access to data, such as social media platforms, gaming applications, or e-commerce sites.
+- **Disaster Recovery:** Provides redundancy and failover capabilities across regions, enhancing the resilience of your application.
+
+### 1.3.3. Summary
+
+In summary, Global Tables in Amazon DynamoDB enable you to create a globally distributed, fully managed database that provides low-latency access to data across multiple AWS regions, making it suitable for applications with a worldwide reach.
+
 # 2. Elasticache
 
 Amazon ElastiCache is a **fully managed in-memory data store and caching service** provided by Amazon Web Services (AWS). It is designed to improve the performance of your web applications by enabling faster data retrieval from in-memory databases, which can significantly reduce the load on your primary database.
+
+Besides that, the Amazon ElastiCache offers cache management that can be used to **distributed sessions management** as well.
 
 # 3. DynamoDB vs Elasticache
 
