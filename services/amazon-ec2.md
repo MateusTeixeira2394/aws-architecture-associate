@@ -4,20 +4,25 @@ Amazon Elastic Compute Cloud (EC2) is a web service provided by Amazon Web Servi
 
 ## 1.1. Key Features of EC2:
 
-1. **Scalability**: 
+1. **Scalability**:
+
    - Launch as many or as few virtual servers as you need.
    - Scale up or down quickly to handle changes in demand.
 
-2. **Variety of Instance Types**: 
+2. **Variety of Instance Types**:
+
    - EC2 offers a wide variety of instance types optimized for different use cases, such as general-purpose, compute-optimized, memory-optimized, and storage-optimized instances.
 
 3. **Customizable Configurations**:
+
    - Choose the operating system, networking features, storage options, and more for your instances.
 
 4. **Elasticity**:
+
    - Automatically scale your instances based on demand with features like Auto Scaling and Elastic Load Balancing.
 
 5. **Pay-As-You-Go Pricing**:
+
    - Only pay for the compute capacity that you actually use, making it cost-effective.
 
 6. **Security**:
@@ -25,6 +30,7 @@ Amazon Elastic Compute Cloud (EC2) is a web service provided by Amazon Web Servi
    - Allows you to create security groups and configure network access control lists (ACLs) to control the flow of traffic to your instances.
 
 ## 1.2. Common Use Cases:
+
 - **Hosting websites and web applications**
 - **Running big data analytics**
 - **Performing high-performance computing (HPC) tasks**
@@ -61,7 +67,7 @@ In Amazon Web Services (AWS), a **Security Group** acts as a virtual firewall fo
 
 **AWS Identity and Access Management (IAM)** is a service that helps you securely control access to AWS resources, including EC2 instances. IAM allows you to manage who can access your resources (authentication) and what actions they can perform on those resources (authorization).
 
-## 2.5. VPC 
+## 2.5. VPC
 
 A **Virtual Private Cloud (VPC)** is a virtual network dedicated to your AWS account that allows you to launch AWS resources, such as EC2 instances, in a logically isolated section of the AWS cloud. It provides full control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and gateways.
 
@@ -71,25 +77,26 @@ A **Virtual Private Cloud (VPC)** is a virtual network dedicated to your AWS acc
 
 ## 3.1 Summay
 
-| **Plan Type**           | **Description**                                                                                                                                 | **Use Case**                                                                                          |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **On-Demand Instances** | Pay for compute capacity by the hour or second with no long-term commitments.                                                                   | Development, testing, or temporary workloads.                                                          |
-| **Reserved Instances**  | Commit to using EC2 for a one- or three-year term to receive significant discounts (up to 75%).                                                 | Steady-state or predictable usage, where long-term commitments make sense.                             |
-| **Spot Instances**      | Purchase unused EC2 capacity at a reduced rate (up to 90% off) but can be interrupted by AWS with a two-minute warning.                         | Flexible, fault-tolerant workloads, such as big data processing, batch jobs, and testing.              |
-| **Savings Plans**       | Flexible pricing model with cost savings in exchange for committing to consistent usage (measured in $/hour) for a 1- or 3-year term.           | Users with predictable workloads that can commit to consistent usage across various AWS services.      |
-| **Dedicated Hosts**     | Physical servers fully dedicated to your use, meeting regulatory/compliance needs or optimizing costs with existing licenses.                   | Workloads requiring physical server isolation, such as those with specific compliance needs.           |
-| **Dedicated Instances** | Instances running on hardware dedicated to a single customer, providing isolation at the instance level.                                        | Similar to Dedicated Hosts but with less control over the physical server.                             |
-| **Capacity Reservations**| Reserve capacity in a specific Availability Zone for any duration, with the flexibility to turn it on and off.                                 | Ensuring capacity in a specific AZ for time-sensitive workloads.                                       |
+| **Plan Type**             | **Description**                                                                                                                       | **Use Case**                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **On-Demand Instances**   | Pay for compute capacity by the hour or second with no long-term commitments.                                                         | Development, testing, or temporary workloads.                                                     |
+| **Reserved Instances**    | Commit to using EC2 for a one- or three-year term to receive significant discounts (up to 75%).                                       | Steady-state or predictable usage, where long-term commitments make sense.                        |
+| **Spot Instances**        | Purchase unused EC2 capacity at a reduced rate (up to 90% off) but can be interrupted by AWS with a two-minute warning.               | Flexible, fault-tolerant workloads, such as big data processing, batch jobs, and testing.         |
+| **Savings Plans**         | Flexible pricing model with cost savings in exchange for committing to consistent usage (measured in $/hour) for a 1- or 3-year term. | Users with predictable workloads that can commit to consistent usage across various AWS services. |
+| **Dedicated Hosts**       | Physical servers fully dedicated to your use, meeting regulatory/compliance needs or optimizing costs with existing licenses.         | Workloads requiring physical server isolation, such as those with specific compliance needs.      |
+| **Dedicated Instances**   | Instances running on hardware dedicated to a single customer, providing isolation at the instance level.                              | Similar to Dedicated Hosts but with less control over the physical server.                        |
+| **Capacity Reservations** | Reserve capacity in a specific Availability Zone for any duration, with the flexibility to turn it on and off.                        | Ensuring capacity in a specific AZ for time-sensitive workloads.                                  |
 
 EC2 Pricing Plans
 ![EC2 Pricing Plans](../imgs/ec2-pricing.jpg)
 
 ## 3.2. Charge period 🕑
-|OS                           | Period |Minimum |
-|-----------------------------|--------|--------|
-|Windows, Red Hat EL, Suse Es |hours   | 1h     |
-|Linux                        |seconds | 1min   |
-|EBS                          |seconds | 1min   |
+
+| OS                           | Period  | Minimum |
+| ---------------------------- | ------- | ------- |
+| Windows, Red Hat EL, Suse Es | hours   | 1h      |
+| Linux                        | seconds | 1min    |
+| EBS                          | seconds | 1min    |
 
 ## 3.3. Reserved Instances (RI)
 
@@ -98,6 +105,7 @@ EC2 Pricing Plans
 - Less flexible;
 - It can change AZ (Available Zone), IS (Instance Size), NT (Network Type);
 - Pricing: 💰
+
 ### 3.3.2. Convertible RI
 
 - More flexible;
@@ -111,7 +119,7 @@ EC2 Pricing Plans
 - Contract: 1 to 3 years
 - It is applied for Fargate, Lambda, EC2;
 - Any Region, Family, Size, OS;
-- Pricing: 💰💰 
+- Pricing: 💰💰
 
 ### 3.4.2. EC2 SP
 
@@ -134,6 +142,12 @@ A Placement Group is a feature that determines how instances are placed on the u
 
 ## 5.1. Kinds of placement groups
 
+| Placement Group Type | Description                                            | Use Case                                        | Pros                                          | Cons                                               |
+| -------------------- | ------------------------------------------------------ | ----------------------------------------------- | --------------------------------------------- | -------------------------------------------------- |
+| **Cluster**          | Instances close together in the same AZ                | Low-latency, high-performance apps (HPC, ML)    | Low-latency, high throughput                  | Prone to hardware failures impacting all instances |
+| **Partition**        | Instances spread across partitions with isolated racks | Large-scale distributed systems (Hadoop, HDFS)  | Isolation from hardware failure in partitions | Higher latency between partitions                  |
+| **Spread**           | Instances spread across distinct hardware              | Critical applications needing high availability | Max isolation from hardware failures          | Limited to seven instances per AZ                  |
+
 ![Kinds of placement groups image](../imgs/ec2-placement-group.jpg)
 
 # 6. ENI, ENA and EFA 🌐
@@ -143,26 +157,27 @@ An Elastic Network Interface (ENI) in Amazon EC2 (Elastic Compute Cloud) is a vi
 ![How the ENI works image](../imgs/ec2-eni-ena-efa.jpg)
 
 - **ENI (Elastic Network Interface)**
-   - Basic speed
-   - Supported for all instances;
+  - Basic speed
+  - Supported for all instances;
 - **ENA (Elastic Network Adapter)**
-   - Advanced
-   - More speed
-   - Just some instances;
+  - Advanced
+  - More speed
+  - Just some instances;
 - **EFA (Elastic Fabric Adapter)**
-   - High speed;
-   - MPI (Message Passing Interface);
-   - Machine Learning;
-   - Just some instances;
+  - High speed;
+  - MPI (Message Passing Interface);
+  - Machine Learning;
+  - Just some instances;
 
 # 7. Private and Public IPs 🏠🌐
 
 ## 7.1. Private IPs
-|Class | IP Address Range              | Default Subnet mask  | 
-|------|-------------------------------|----------------------|
-| A    | 10.0.0.0 - 10.255.255.255     | 255.**0.0.0**        |
-| B    | 172.16.0.0 - 172.31.255.255   | 255.255.**0.0**      |
-| C    | 192.168.0.0 - 192.168.255.255 | 255.255.255.**0**    |
+
+| Class | IP Address Range              | Default Subnet mask |
+| ----- | ----------------------------- | ------------------- |
+| A     | 10.0.0.0 - 10.255.255.255     | 255.**0.0.0**       |
+| B     | 172.16.0.0 - 172.31.255.255   | 255.255.**0.0**     |
+| C     | 192.168.0.0 - 192.168.255.255 | 255.255.255.**0**   |
 
 - There are classes os range;
 - Non-unique. The ips can be used on other private networks;
@@ -185,15 +200,15 @@ An Elastic Network Interface (ENI) in Amazon EC2 (Elastic Compute Cloud) is a vi
 
 ## 7.3. Summary
 
-| **Aspect**                 | **Private IP**                                             | **Public IP**                                               |
-|----------------------------|------------------------------------------------------------|--------------------------------------------------------------|
-| **Range/Classes**          | There are classes of range.                               | Can be any address outside the private IP range.            |
-| **Uniqueness**             | Non-unique; can be used on other private networks.        | Unique across the entire internet.                          |
-| **Registration**           | Not publicly registered.                                  | Publicly registered on the internet.                        |
-| **Usage**                  | Used internally within a private network.                 | Used externally on the internet.                            |
-| **Assignment**             | Assigned by a router.                                     | Assigned by an ISP (Internet Service Provider).             |
-| **Cost**                   | Free.                                                      | Not free; typically incurs a cost from the ISP.             |
-| **Security**               | More secure; limited to internal network access.          | Less secure; accessible from the internet.                  |
+| **Aspect**        | **Private IP**                                     | **Public IP**                                    |
+| ----------------- | -------------------------------------------------- | ------------------------------------------------ |
+| **Range/Classes** | There are classes of range.                        | Can be any address outside the private IP range. |
+| **Uniqueness**    | Non-unique; can be used on other private networks. | Unique across the entire internet.               |
+| **Registration**  | Not publicly registered.                           | Publicly registered on the internet.             |
+| **Usage**         | Used internally within a private network.          | Used externally on the internet.                 |
+| **Assignment**    | Assigned by a router.                              | Assigned by an ISP (Internet Service Provider).  |
+| **Cost**          | Free.                                              | Not free; typically incurs a cost from the ISP.  |
+| **Security**      | More secure; limited to internal network access.   | Less secure; accessible from the internet.       |
 
 # 8. NAT in EC2
 
@@ -210,18 +225,22 @@ An **Elastic IP** in Amazon EC2 (Elastic Compute Cloud) is a static, public IPv4
 ## 9.1. Key Features of Elastic IP
 
 1. **Static and Public**
+
    - Elastic IPs are static, meaning they don’t change over time, unlike the dynamic public IPs that are automatically assigned to EC2 instances when they are launched.
    - They are public IP addresses that are reachable from the internet.
 
 2. **Persistence**
+
    - Elastic IPs remain associated with your AWS account until you explicitly release them, ensuring you have consistent IP addresses for your applications.
    - You can remap an Elastic IP to another instance in your account quickly if the instance it's currently associated with fails or is terminated.
 
 3. **Associations**
+
    - An Elastic IP can be associated with an EC2 instance, a network interface, or a NAT Gateway.
    - You can associate or disassociate Elastic IPs from instances or network interfaces at any time without restarting the instances.
 
 4. **Failover**
+
    - Elastic IPs enable high availability and disaster recovery by allowing you to quickly remap an IP address to another instance if the instance currently associated with it fails.
    - This feature is particularly useful for maintaining uptime and ensuring that your services remain accessible.
 
@@ -231,7 +250,6 @@ An **Elastic IP** in Amazon EC2 (Elastic Compute Cloud) is a static, public IPv4
 ## 9.2. Use Cases for Elastic IP
 
 - **Web Servers**: If you're running a web server on an EC2 instance, an Elastic IP ensures that the server is reachable at the same IP address even if you need to replace or restart the instance.
-  
 - **Failover Scenarios**: In the event of an instance failure, you can quickly remap the Elastic IP to a backup instance, minimizing downtime.
 
 - **NAT Gateways**: Elastic IPs are often used in conjunction with NAT Gateways to provide a consistent public IP address for outbound traffic from instances in private subnets.
@@ -256,11 +274,13 @@ In Amazon EC2, networking is an essential aspect of managing your instances and 
 ## 10.1. Private and Public Subnets
 
 ### 10.1.1. Public Subnet
+
 - **Definition**: A public subnet is a subnet within a Virtual Private Cloud (VPC) that is associated with a route table containing a route to an Internet Gateway (IGW).
 - **Internet Access**: Instances in a public subnet can have public IP addresses and can directly access the internet through the IGW.
 - **Use Cases**: Typically used for resources that need to be accessible from the internet, such as web servers, load balancers, and bastion hosts.
 
 ### 10.1.2. Private Subnet
+
 - **Definition**: A private subnet is a subnet within a VPC that is not associated with a route table containing a route to an Internet Gateway.
 - **No Direct Internet Access**: Instances in a private subnet do not have public IP addresses and cannot directly access the internet.
 - **Use Cases**: Used for resources that should not be exposed to the internet, such as databases, application servers, and backend services. These instances can access the internet through a NAT gateway or NAT instance if needed.
@@ -294,7 +314,8 @@ In Amazon EC2, networking is an essential aspect of managing your instances and 
 
 ## 10.6. Example Scenario
 
-- **VPC Setup**: 
+- **VPC Setup**:
+
   - **Public Subnet**: Contains a bastion host and a NAT Gateway. The bastion host allows secure SSH access to instances in the private subnet. The NAT Gateway enables instances in the private subnet to access the internet for software updates.
   - **Private Subnet**: Contains application servers and databases that are isolated from the internet. These servers can only access the internet through the NAT Gateway and can be managed through the bastion host.
 
