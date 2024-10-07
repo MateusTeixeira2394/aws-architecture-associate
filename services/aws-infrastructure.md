@@ -66,6 +66,8 @@ The AWS has many data centers distributed to the whole world, according to the i
 
 **Example**: AWS Outposts racks delivered to customer data centers
 
+![Outpost example](../imgs/outpost.jpg)
+
 # 2. Warm Standby vs Pilot Light 🌪️🫨🌋⛈️🌊
 
 **Warm Standby** and **Pilot Light** are disaster recovery (DR) strategies used in cloud computing, particularly in **AWS**, to minimize downtime and data loss in the event of a failure. Both strategies are designed to ensure business continuity, but they differ in terms of infrastructure readiness and recovery speed.
