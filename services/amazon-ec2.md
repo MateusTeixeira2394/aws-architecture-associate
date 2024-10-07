@@ -148,6 +148,12 @@ A Placement Group is a feature that determines how instances are placed on the u
 | **Partition**        | Instances spread across partitions with isolated racks | Large-scale distributed systems (Hadoop, HDFS)  | Isolation from hardware failure in partitions | Higher latency between partitions                  |
 | **Spread**           | Instances spread across distinct hardware              | Critical applications needing high availability | Max isolation from hardware failures          | Limited to seven instances per AZ                  |
 
+- **OBS 1**: An EC2 instance cannot be part of various placement groups.
+- **OBS 2**: It cannot merge placement groups.
+- **OBS 3**: there is no additional cost for using an EC2 placement group itself.
+
+É possível mesclar grupos de posicionamentos EC2 (cluster, spread ou partição)?
+
 ![Kinds of placement groups image](../imgs/ec2-placement-group.jpg)
 
 # 6. ENI, ENA and EFA 🌐
