@@ -17,9 +17,9 @@ The exam also validates the candidate’s ability to complete the following task
 There are two types of questions on the exam:
 
 - **Multiple choice**: has one correct answer and three incorrect answers
-(distractors).
+  (distractors).
 - **Multiple response**: has two or more correct answers out of five or more
-answer options.
+  answer options.
 
 ## Ungraded Content
 
@@ -50,7 +50,7 @@ The following is a list of AWS services and features that are in scope for the e
 - [Database](./database/README.md)
 - [Computing](./computing/README.md)
 - [Containers](./containers/README.md)
-- Developer tools
+- [Developer tools](./services/developer-tools.md)
 - AWS costs management
 - Management and governance
 - App integrations
