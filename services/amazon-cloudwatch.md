@@ -56,3 +56,39 @@ Amazon CloudWatch is a monitoring and observability service offered by AWS that 
 - **Cost Management**: Monitor resource usage and costs, enabling better budget management and optimization of cloud spending.
 
 Amazon CloudWatch provides a comprehensive set of tools to monitor, analyze, and optimize your AWS resources, making it an essential service for managing cloud applications and infrastructure effectively.
+
+## 1.3. Basic x Detailed Monitors
+
+Amazon CloudWatch provides two types of monitoring for AWS resources: Basic Monitoring and Detailed Monitoring. Each type offers different levels of granularity and data retention, suitable for various use cases.
+
+### 1.3.1. Basic Monitoring
+
+- **Definition**: Basic Monitoring is the default monitoring option for most AWS services, providing essential metrics at a lower frequency.
+- **Features**:
+  - **Data Frequency**: Provides metrics at 5-minute intervals.
+  - **Cost**: No additional charges for Basic Monitoring; it's included in the service cost.
+  - **Metrics Available**: Includes a limited set of metrics that are automatically collected for each resource.
+  - **Use Cases**: Suitable for scenarios where high-resolution monitoring is not critical. It helps in getting an overview of resource usage without incurring additional costs.
+
+### 1.3.2. Detailed Monitoring
+
+- **Definition**: Detailed Monitoring provides a more granular view of your AWS resources by collecting metrics at a higher frequency.
+- **Features**:
+  - **Data Frequency**: Provides metrics at 1-minute intervals.
+  - **Cost**: Typically incurs additional charges for Detailed Monitoring, depending on the service.
+  - **Metrics Available**: Includes all metrics available in Basic Monitoring, plus additional metrics that can be useful for in-depth analysis.
+  - **Use Cases**: Ideal for applications that require real-time monitoring or when high-resolution data is necessary for performance analysis, troubleshooting, or scaling decisions.
+
+### 1.3.3. Key Differences
+
+| Feature               | Basic Monitoring                 | Detailed Monitoring                         |
+| --------------------- | -------------------------------- | ------------------------------------------- |
+| **Data Frequency**    | 5 minutes                        | 1 minute                                    |
+| **Cost**              | Included in service cost         | Additional charges may apply                |
+| **Granularity**       | Lower granularity                | Higher granularity                          |
+| **Metrics Available** | Limited set of metrics           | More extensive metrics available            |
+| **Use Case**          | General overview, cost-effective | Real-time monitoring, critical applications |
+
+### 1.3.4. Conclusion
+
+Basic Monitoring is a cost-effective solution for general monitoring needs, while Detailed Monitoring offers a more precise view of resource performance and is suitable for applications requiring real-time insights. Choosing between the two depends on your specific monitoring requirements and budget considerations.
