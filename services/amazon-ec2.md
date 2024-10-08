@@ -73,9 +73,9 @@ A **Virtual Private Cloud (VPC)** is a virtual network dedicated to your AWS acc
 
 ![EC2 Components image](../imgs/ec2-components.jpg)
 
-# 3. Pricing 💰
+# 3. Pricing
 
-## 3.1 Summay
+## 3.1 Summary 💰
 
 | **Plan Type**             | **Description**                                                                                                                       | **Use Case**                                                                                      |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
