@@ -52,7 +52,7 @@ The following is a list of AWS services and features that are in scope for the e
 - [Containers](./containers/README.md)
 - [Developer tools](./services/developer-tools.md)
 - [AWS costs management](./cost-management/README.md)
-- Management and governance
+- [Management and governance](./management-governance/README.md)
 - App integrations
 - Machine Learning
 - Transfer and migration
