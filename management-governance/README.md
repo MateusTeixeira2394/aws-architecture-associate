@@ -1,6 +1,7 @@
 # Management and Governance 👨🏽‍💼
 
-- [AWS Auto Scaling](../services/aws-auto-scaling.md)
-- [AWS Cloud Formation](../services/aws-cloudformation.md)
+- [Aws Auto Scaling](../services/aws-auto-scaling.md)
+- [Aws Cloud Formation](../services/aws-cloudformation.md)
 - [Amazon CloudWatch](../services/amazon-cloudwatch.md)
-- [AWS CloudTrail](../services/aws-cloudtrail.md)
+- [Aws CloudTrail](../services/aws-cloudtrail.md)
+- [Aws Proton](../services/aws-proton.md)
