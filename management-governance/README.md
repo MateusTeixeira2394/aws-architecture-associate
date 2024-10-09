@@ -7,3 +7,4 @@
 - [Aws Proton](../services/aws-proton.md)
 - [Aws Control Tower](../services/aws-control-tower.md)
 - [Aws System Manager](../services/aws-system-manager.md)
+- [Aws Compute Optimizer](../services/aws-compute-optimizer.md)
