@@ -55,4 +55,10 @@ Amazon CloudTrail is a service that enables governance, compliance, and operatio
 - **Incident Investigation**: Investigate security incidents or operational issues by analyzing CloudTrail logs for relevant events.
 - **Resource Management**: Monitor resource usage and access patterns to optimize resource management and reduce costs.
 
+## 1.3. Summary
+
 Amazon CloudTrail is an essential service for maintaining transparency and accountability in your AWS environment, enabling organizations to monitor user activity and meet compliance requirements effectively.
+
+In a nutshell, CloudTrail is a service that registers all realized activities in a AWS account.
+
+![CloudTrail Diagram](../imgs/cloudtrail-diagram.jpg)
