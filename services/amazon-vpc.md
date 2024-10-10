@@ -110,26 +110,45 @@ VPC peering connection **does not support transitive routing**. A VPC cannot rou
 
 # 5. VPC Endpoints 🛣️
 
-**VPC endpoints** allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink, without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the service does not leave the AWS network.
+**VPC endpoints** allow you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS **PrivateLink**, without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the service does not leave the AWS network.
 
 ## 5.1. Gateway Endpoints (public)
+
+A Gateway Endpoint is a target in your VPC route table that allows communication between your VPC and specific AWS services privately using the AWS network. It does not require internet access or a NAT gateway. The endpoint is simply added to the route table, allowing traffic to the supported services to flow through it.
 
 Certain AWS services are **public** by default, meaning they communicate over the internet unless you explicitly configure them to use private connectivity (such as through VPC endpoints, VPC peering, or AWS Direct Connect), such as:
 
 - Amazon S3 (Simple Storage Service);
 - Amazon DynamoDB;
-- Amazon SNS (Simple Notification Service);
-- Amazon API Gateway;
-- AWS Lambda;
-- AWS Elastic Load Balancing (Classic/ALB/NLB);
-- Amazon RDS (Relational Database Service);
-- Amazon SES (Simple Email Service);
-- And others;
 
 So, these services create a route in the VPC route table that directs traffic them to the gateway, keeping it within the AWS network.
 
 ## 5.2. Interface Endpoints (private)
 
-Otherwise, some AWS services are already **private** and they use the **Interface Endpoints** use **Elastic Network Interfaces (ENIs)** within the VPC to connect to supported AWS services. These endpoints have a private IP address from the VPC’s IP address range.
+Otherwise, some AWS services are already **private** and they use the **Interface Endpoints** that is the **Elastic Network Interfaces (ENIs)** within the VPC to connect to supported AWS services through **AWS PrivateLink**. These endpoints have a private IP address from the VPC’s IP address range.
 
-They are powered by AWS PrivateLink, which provides private connectivity between VPCs, AWS services, and on-premises networks.
+They are powered by **AWS PrivateLink**, which provides private connectivity between VPCs, AWS services, and on-premises networks.
+
+Supported Aws Services:
+
+- EC2 (e.g., Instance Metadata, Systems Manager)
+- Lambda
+- CloudWatch (Logs, Metrics)
+- Elastic Load Balancing
+- Amazon RDS
+- Secrets Manager
+- API Gateway
+- SQS, SNS
+- And many more...
+
+## 5.3. Gateway Endpoint vs Interface Endpoint
+
+| **Feature**            | **Gateway Endpoint**                         | **Interface Endpoint (PrivateLink)**                               |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------------------------ |
+| **Service Type**       | Routing-based                                | Network interface-based                                            |
+| **Supported Services** | S3, DynamoDB                                 | Many AWS services (e.g., Lambda, SQS)                              |
+| **Setup**              | Route table entry                            | ENI created in VPC subnets                                         |
+| **Security**           | Private routing, no internet access          | Private communication using ENIs, Security Groups, and PrivateLink |
+| **Cost**               | No additional charges for data               | Costs for endpoint and data processing                             |
+| **Flexibility**        | Limited to two services                      | Supports many AWS services and private services                    |
+| **Use Case**           | Efficient, private access to S3 and DynamoDB | Broader use for other AWS services and custom services             |
