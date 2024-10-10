@@ -56,7 +56,7 @@ The following is a list of AWS services and features that are in scope for the e
 - App integrations
 - Machine Learning
 - Transfer and migration
-- Network and Continuous Integration
+- [Network and content distribution](./network-content-distribution/README.md)
 - Security, Identity and Compatibility
 - Serverless
 - Web and mobile development
