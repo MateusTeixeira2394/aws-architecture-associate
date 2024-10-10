@@ -5,4 +5,5 @@
 - [DNS](../services/dns.md)
 - [Amazon Route53](../services/amazon-route53.md)
 - [Amazon CloudFront](../services/amazon-cloudfront.md)
+- [Aws Global Accelerator](../services/aws-global-accelerator.md)
 - [Amazon Elastic Load Balancing (ELB)](../services/amazon-elb.md)
