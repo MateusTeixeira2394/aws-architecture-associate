@@ -104,6 +104,8 @@ When the policy is applied to a service (or resource) such as EC2, S3, etc.
 3. AWS uses STS to assume a role based on the user's identity and issues temporary security credentials.
 4. The user gains temporary access to AWS resources, based on the permissions attached to the assumed IAM role.
 
+![Federation Identity Diagram](../imgs/federation-identity-diagram.jpg)
+
 ## 7.4. Benefits
 
 - **Centralized Authentication:** You manage user identities and permissions centrally, without needing to replicate users in AWS.

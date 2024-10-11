@@ -10,3 +10,7 @@
 - [Aws Firewall Manager](../services/aws-firewall-manager.md)
 - [Aws WAF](../services/aws-waf.md)
 - [Amazon GuardDuty](../services/amazon-guardduty.md)
+- [Amazon Detective](../services/amazon-detective.md)
+- [Aws Artifact](../services/aws-artifact.md)
+- [Aws Audit Manager](../services/aws-audit-manager.md)
+- [Aws Certificate Manager (ACM)](../services/aws-certificate-manager.md)
