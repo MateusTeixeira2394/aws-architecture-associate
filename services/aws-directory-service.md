@@ -2,6 +2,8 @@
 
 Active Directory (AD) is a directory service developed by Microsoft that provides a centralized platform for managing and organizing users, computers, devices, and other resources in a network. It allows administrators to control permissions, apply policies, and authenticate users within an organization.
 
+![Aws Directory Service](../imgs/aws-directory-service-diagram.jpg)
+
 ## 1.1. Key Components of Active Directory:
 
 - **Domain:** A logical group of objects (users, computers, devices) that share the same AD database and security policies. Each domain has a unique namespace.
