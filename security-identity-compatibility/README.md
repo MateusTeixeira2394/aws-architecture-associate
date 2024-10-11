@@ -9,3 +9,4 @@
 - [Aws Secrets Manager](../services/aws-secret-manager.md)
 - [Aws Firewall Manager](../services/aws-firewall-manager.md)
 - [Aws WAF](../services/aws-waf.md)
+- [Amazon GuardDuty](../services/amazon-guardduty.md)

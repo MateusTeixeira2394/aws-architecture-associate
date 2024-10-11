@@ -56,3 +56,7 @@
 - **Cost-Effective**: Pay only for what you use with AWS’s **pay-as-you-go** pricing model.
 
 In summary, AWS WAF is a highly customizable, scalable, and secure web application firewall designed to protect web applications from common web-based threats such as SQL injection, XSS, and DDoS attacks.
+
+## 1.5. Aws WAF Vs GuardDuty
+
+[Aws WAF Vs Amazon GuardDuty](./guardduty-vs-waf.md)
