@@ -17,3 +17,4 @@
 - [Aws Audit Manager](../services/aws-audit-manager.md)
 - [Aws Certificate Manager (ACM)](../services/aws-certificate-manager.md)
 - [Amazon Macie](../services/amazon-macie.md)
+- [Aws Security Hub](../services/aws-security-hub.md)
