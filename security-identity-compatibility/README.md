@@ -18,3 +18,4 @@
 - [Aws Certificate Manager (ACM)](../services/aws-certificate-manager.md)
 - [Amazon Macie](../services/amazon-macie.md)
 - [Aws Security Hub](../services/aws-security-hub.md)
+- [Aws RAM](../services/aws-ram.md)
