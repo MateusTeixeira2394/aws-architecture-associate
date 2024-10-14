@@ -1,4 +1,4 @@
-# Management and Governance 👨🏽‍💼
+# Management and Governance 🧭
 
 - [Aws Auto Scaling](../services/aws-auto-scaling.md)
 - [Aws Cloud Formation](../services/aws-cloudformation.md)

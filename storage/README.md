@@ -1,4 +1,4 @@
-# 1. Storage 📁
+# 1. Storage 🗃️
 
 - [Snapshot](../services/storage-snapshot.md)
 - [Amazon Elastic Block Store (Amazon EBS)](../services/amazon-ebs.md)
@@ -9,7 +9,7 @@
 
 # 2. S3 vs EBS vs EFS
 
-- EFS (Elastic File System): Storage via NFS. 
+- EFS (Elastic File System): Storage via NFS.
 - EBS (Elastic Block Store): It's like an EC2 HD (Hard Drive)
 - S3 (Simple Storage Service): Objects Storage
 

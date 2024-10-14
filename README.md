@@ -43,20 +43,20 @@ The exam has the following content domains and weightings:
 
 The following is a list of AWS services and features that are in scope for the exam. This list is not exhaustive and is subject to change. AWS offerings appear in categories that align with the primary functions of the offerings.
 
-- [Cloud Computing Concepts](./services/cloud-computing-concepts.md)
-- [The infrastructure](./services/aws-infrastructure.md)
-- [Analytics](./analytics/README.md)
-- [Storage](./storage/README.md)
-- [Database](./database/README.md)
-- [Computing](./computing/README.md)
-- [Containers](./containers/README.md)
-- [Developer tools](./services/developer-tools.md)
-- [AWS costs management](./cost-management/README.md)
-- [Management and governance](./management-governance/README.md)
-- App integrations
-- Machine Learning
-- Transfer and migration
-- [Network and content distribution](./network-content-distribution/README.md)
-- [Security, Identity and Compatibility](./security-identity-compatibility/README.md)
-- [Serverless](./serverless/README.md)
-- Web and mobile development
+- 📚 [Cloud Computing Concepts](./services/cloud-computing-concepts.md)
+- 🏗️ [The infrastructure](./services/aws-infrastructure.md)
+- 📊 [Analytics](./analytics/README.md)
+- 🗃️ [Storage](./storage/README.md)
+- 🛢️ [Database](./database/README.md)
+- 🖥️ [Computing](./computing/README.md)
+- 🐳 [Containers](./containers/README.md)
+- 🛠️ [Developer tools](./services/developer-tools.md)
+- 💰 [AWS costs management](./cost-management/README.md)
+- 🧭 [Management and governance](./management-governance/README.md)
+- 🔗 App integrations
+- 🤖 Machine Learning
+- 🚚 Transfer and migration
+- 🌐 [Network and content distribution](./network-content-distribution/README.md)
+- 🔐 [Security, Identity and Compatibility](./security-identity-compatibility/README.md)
+- ⚡ [Serverless](./serverless/README.md)
+- 📱 Web and mobile development

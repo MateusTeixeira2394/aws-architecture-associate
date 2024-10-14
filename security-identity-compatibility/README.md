@@ -1,4 +1,4 @@
-# Security, Identity and Compatibility 🛡️
+# Security, Identity and Compatibility 🔐
 
 - [AWS IAM](../services/aws-iam.md)
 - [Aws Directory Service](../services/aws-directory-service.md)

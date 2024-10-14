@@ -1,4 +1,4 @@
-# AWS Cost management
+# AWS Cost management 💰
 
 - [AWS Budget](../services/aws-budget.md)
 - [AWS Cost and Billing management](../services/cost-billing-management.md)

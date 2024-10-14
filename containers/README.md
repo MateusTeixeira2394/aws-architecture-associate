@@ -1,4 +1,4 @@
-# Containers 📦🚢🏗️
+# Containers 🐳
 
 - [Amazon ECS](../services/amazon-ecs.md)
 - [Amazon EKS](../services/amazon-eks.md)

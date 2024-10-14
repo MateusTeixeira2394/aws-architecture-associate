@@ -1,4 +1,4 @@
-# Network and Content Distribution 🛜
+# Network and Content Distribution 🌐
 
 - [Amazon VPC](../services/amazon-vpc.md)
 - [Aws VPN](../services/aws-vpn.md)
