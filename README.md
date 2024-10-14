@@ -58,5 +58,5 @@ The following is a list of AWS services and features that are in scope for the e
 - Transfer and migration
 - [Network and content distribution](./network-content-distribution/README.md)
 - [Security, Identity and Compatibility](./security-identity-compatibility/README.md)
-- Serverless
+- [Serverless](./serverless/README.md)
 - Web and mobile development
