@@ -8,3 +8,5 @@
 - [Amazon SageMaker](../services/amazon-sagemaker.md)
 - [Amazon Kendra](../services/amazon-kendra.md)
 - [Amazon Textract](../services/amazon-textract.md)
+- [Amazon Comprehend](../services/amazon-comprehend.md)
+- [Amazon Fraud Detector](../services/amazon-fraud-detector.md)
