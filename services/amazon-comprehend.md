@@ -2,6 +2,8 @@
 
 **Amazon Comprehend** is a natural language processing (NLP) service provided by AWS that uses machine learning to find insights and relationships in text. It enables developers to analyze text data to uncover valuable information, extract key phrases, identify sentiments, and categorize content without the need for machine learning expertise. Amazon Comprehend is designed to help organizations understand and gain insights from their textual data at scale.
 
+![Amazon Comprehend diagram](../imgs/amazon-comprehend.jpg)
+
 ## Key Features of Amazon Comprehend:
 
 1. **Entity Recognition**: Identifies and categorizes entities in the text, such as people, places, organizations, dates, and more, providing valuable context to the content.

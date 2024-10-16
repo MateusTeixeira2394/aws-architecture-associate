@@ -2,6 +2,8 @@
 
 **AWS WAF** is a cloud-based web application firewall service that helps protect your web applications from common web exploits and attacks that can affect availability, compromise security, or consume excessive resources. AWS WAF allows you to monitor and control incoming and outgoing HTTP(S) requests to your applications by defining customizable security rules.
 
+![Aws WAF Diagram](../imgs/amazon-waf.jpg)
+
 ## 1.1. Key Features of AWS WAF:
 
 1. **Protection Against Common Attacks**:

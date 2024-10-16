@@ -59,4 +59,4 @@ The following is a list of AWS services and features that are in scope for the e
 - 🌐 [Network and content distribution](./network-content-distribution/README.md)
 - 🔐 [Security, Identity and Compatibility](./security-identity-compatibility/README.md)
 - ⚡ [Serverless](./serverless/README.md)
-- 📱 Web and mobile development
+- 📱 [Web and mobile development](./web-mobile-development/README.md)

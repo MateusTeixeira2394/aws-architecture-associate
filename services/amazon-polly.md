@@ -1,4 +1,4 @@
-# 1. Amazon Polly 🤖📢
+# 1. Amazon Polly 🤖🦜
 
 **Amazon Polly** is a cloud-based text-to-speech (TTS) service provided by AWS that converts written text into lifelike speech. Using deep learning technologies, Polly produces natural-sounding human voices in multiple languages and dialects. It is designed to make applications and devices more engaging by enabling them to "speak" to users.
 
