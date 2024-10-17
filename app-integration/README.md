@@ -6,3 +6,4 @@
 - [Amazon MQ](../services/amazon-mq.md)
 - [Amazon SQS](../services/amazon-sqs.md)
 - [Amazon SNS](../services/amazon-sns.md)
+- [Amazon Step Functions](../services/aws-step-functions.md)
