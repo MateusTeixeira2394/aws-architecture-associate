@@ -2,6 +2,8 @@
 
 **Amazon Simple Queue Service (SQS)** is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to send, store, and receive messages between software components at any volume, without losing messages.
 
+![Amazon SQS Diagram](../imgs/amazon-sqs.jpg)
+
 ## Key Features of Amazon SQS:
 
 1. **Fully Managed**: Amazon SQS is a serverless service, meaning that AWS manages the infrastructure, scaling, and availability, allowing you to focus on application logic instead of server management.
@@ -10,6 +12,8 @@
 
    - **Standard Queues**: Offer maximum throughput, allowing unlimited transactions per second. Messages are delivered at least once and might be delivered out of order.
    - **FIFO Queues (First-In-First-Out)**: Ensure that messages are delivered exactly once and in the exact order they are sent, making them suitable for applications that require strict message ordering.
+
+![Standard vs Fifo Queues](../imgs/amazon-sqs-standard-fifo.jpg)
 
 3. **Scalability**: Automatically scales to handle any volume of messages, accommodating fluctuating workloads without manual intervention.
 

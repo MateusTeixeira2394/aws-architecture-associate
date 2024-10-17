@@ -2,6 +2,8 @@
 
 **Amazon MQ** (Message Queue) is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. It enables you to decouple and scale microservices, distributed systems, and serverless applications by providing a reliable way to send messages between components.
 
+![Amazon MQ Diagram](../imgs/amazon-mq.jpg)
+
 ## Key Features of Amazon MQ:
 
 1. **Managed Service**: Amazon MQ takes care of the operational aspects of message brokers, such as provisioning, patching, scaling, and maintenance, allowing you to focus on building applications.
