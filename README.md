@@ -53,7 +53,7 @@ The following is a list of AWS services and features that are in scope for the e
 - 🛠️ [Developer tools](./services/developer-tools.md)
 - 💰 [AWS costs management](./cost-management/README.md)
 - 🧭 [Management and governance](./management-governance/README.md)
-- 🔗 App integrations
+- 🔗 [App integrations](./app-integration/README.md)
 - 🤖 [Machine Learning](./machine-learning/README.md)
 - 🚚 Transfer and migration
 - 🌐 [Network and content distribution](./network-content-distribution/README.md)
