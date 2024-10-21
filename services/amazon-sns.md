@@ -2,6 +2,8 @@
 
 **Amazon Simple Notification Service (SNS)** is a fully managed messaging service that enables you to send messages or notifications to a large number of recipients. It allows you to decouple microservices, distributed systems, and serverless applications by facilitating communication between them through various messaging patterns.
 
+![Amazon SNS Diagram](../imgs/amazon-sns.jpg)
+
 ## Key Features of Amazon SNS:
 
 1. **Pub/Sub Messaging**: Supports the publish/subscribe messaging pattern, allowing publishers to send messages to multiple subscribers without needing to know their identities.
