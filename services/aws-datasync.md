@@ -2,7 +2,7 @@
 
 **AWS DataSync** is a data transfer service that simplifies, automates, and accelerates the process of moving large amounts of data between on-premises storage and AWS services, or between different AWS storage services. It is ideal for use cases such as data migrations, backups, and data replication for disaster recovery.
 
-![Aws DataSync Diagram](../services/aws-datasync.md)
+![Aws DataSync Diagram](../imgs/aws-datasync.jpg)
 
 ## Key Features of AWS DataSync:
 
