@@ -8,3 +8,5 @@
 - [Aws Control Tower](../services/aws-control-tower.md)
 - [Aws System Manager](../services/aws-system-manager.md)
 - [Aws Compute Optimizer](../services/aws-compute-optimizer.md)
+- [Aws Health Dashboard](../services/aws-health-dashboard.md)
+- [Aws CodeGuru](../services/aws-codeguru.md)
