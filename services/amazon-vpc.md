@@ -152,3 +152,5 @@ Supported Aws Services:
 | **Cost**               | No additional charges for data               | Costs for endpoint and data processing                             |
 | **Flexibility**        | Limited to two services                      | Supports many AWS services and private services                    |
 | **Use Case**           | Efficient, private access to S3 and DynamoDB | Broader use for other AWS services and custom services             |
+
+![PrivateLink diagram](../imgs/privateLink.jpg)
