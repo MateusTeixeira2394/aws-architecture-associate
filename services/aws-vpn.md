@@ -57,14 +57,48 @@ In AWS, **VPN (Virtual Private Network)** services are used to securely connect 
 4. Configure your on-premises device to establish an IPsec tunnel with the VGW using the configuration provided by AWS.
 5. Set up routing on both ends to ensure traffic is properly directed through the VPN.
 
-## 1.3. Comparison
+## 1.4. AWS Direct Connect (DX)
 
-| Aspect              | Client-to-Site VPN                                                  | Site-to-Site VPN                                                                                        |
-| ------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Purpose**         | For individual users or devices needing secure remote access to AWS | For connecting entire on-premises networks to AWS                                                       |
-| **Connection Type** | User-to-network                                                     | Network-to-network                                                                                      |
-| **Scalability**     | Supports a large number of individual users                         | Typically connects a single on-premises network to AWS (though you can have multiple Site-to-Site VPNs) |
-| **Protocol**        | OpenVPN                                                             | IPsec                                                                                                   |
-| **Use Case**        | Remote workforce, individual access                                 | Hybrid cloud, on-premises integration, secure corporate network extension                               |
+### 1.4.1. Overview
 
-Both VPN types serve different needs and can be used together in a comprehensive network strategy to secure and scale access to AWS resources.
+- **AWS Direct Connect** provides a dedicated private network connection from your on-premises data center to AWS. Unlike VPN connections that use the public internet, Direct Connect uses private network links, offering more consistent network performance and potentially lower network costs.
+
+### 1.4.2. Key Characteristics
+
+- **Dedicated Connection**: Physical ethernet connection between your network and AWS.
+- **High Bandwidth**: Supports 1Gbps and 10Gbps dedicated connections.
+- **Consistent Performance**: Private connection means more predictable latency and performance.
+- **Cost Effective**: Reduced data transfer costs for high-volume data exchange.
+- **Private Network**: Traffic doesn't traverse the public internet.
+- **Hybrid Capability**: Can be combined with VPN for encrypted communication.
+
+### 1.4.3. Use Cases
+
+- **Large Data Transfer**: Organizations needing to transfer large amounts of data between on-premises and AWS.
+- **Real-time Applications**: Applications requiring consistent, low-latency performance.
+- **Hybrid Cloud**: Enterprise workloads that need reliable, private connectivity to AWS.
+- **Regulatory Compliance**: When data must traverse private networks only.
+
+### 1.4.4. Setup Process
+
+1. Request a Direct Connect connection through AWS or a Direct Connect Partner.
+2. Configure a Virtual Interface (VIF) to connect to AWS services.
+3. Configure Border Gateway Protocol (BGP) for route advertisement.
+4. Set up redundancy if needed (recommended for production workloads).
+
+## 1.5. Comparison
+
+| Aspect              | Client-to-Site VPN                                                  | Site-to-Site VPN                                                                                        | Direct Connect                                                                    |
+| ------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Purpose**         | For individual users or devices needing secure remote access to AWS | For connecting entire on-premises networks to AWS                                                       | For dedicated, private network connection between on-premises and AWS             |
+| **Connection Type** | User-to-network                                                     | Network-to-network                                                                                      | Dedicated physical network-to-network                                             |
+| **Scalability**     | Supports a large number of individual users                         | Typically connects a single on-premises network to AWS (though you can have multiple Site-to-Site VPNs) | Highly scalable with 1Gbps to 10Gbps per connection                              |
+| **Protocol**        | OpenVPN                                                             | IPsec                                                                                                   | Direct ethernet connection                                                        |
+| **Use Case**        | Remote workforce, individual access                                 | Hybrid cloud, on-premises integration, secure corporate network extension                               | High-bandwidth, low-latency, consistent performance needs                         |
+| **Network Path**    | Public Internet                                                     | Public Internet                                                                                        | Private dedicated network                                                         |
+| **Setup Time**      | Minutes to hours                                                    | Hours to days                                                                                          | Weeks to months (requires physical installation)                                  |
+| **Cost Model**      | Pay per connection-hour                                             | Pay per connection-hour                                                                                | Pay for port-hours and data transfer, plus carrier/partner charges               |
+
+These connectivity options serve different needs and can be used together in a comprehensive network strategy to secure and scale access to AWS resources. Direct Connect offers the most reliable and consistent performance but requires more setup time and investment, while VPN solutions provide more flexibility and faster deployment.
+
+![Aws VPNs comparison diagram](../imgs/aws-vpn-comparison.jpg)
