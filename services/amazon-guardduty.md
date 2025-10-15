@@ -40,6 +40,8 @@
 3. **Finding Generation**: When a potential threat is detected, GuardDuty generates a finding with detailed information about the threat.
 4. **Alerting**: Findings can be viewed in the AWS Management Console, or you can configure notifications through Amazon SNS or AWS Security Hub.
 
+![Aws GuardDuty diagram](../imgs/aws-guardduty.jpg)
+
 ## 1.4. Benefits of Amazon GuardDuty:
 
 - **Enhanced Security Posture**: Provides an additional layer of security for AWS environments by detecting threats that may go unnoticed by traditional security measures.
